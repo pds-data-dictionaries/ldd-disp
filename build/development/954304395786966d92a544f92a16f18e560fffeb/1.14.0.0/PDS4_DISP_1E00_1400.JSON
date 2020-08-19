@@ -3,7 +3,7 @@
     "dataDictionary": {
       "Title": "PDS4 Data Dictionary" ,
       "Version": "1.14.0.0" ,
-      "Date": "Wed Aug 19 19:07:54 UTC 2020" ,
+      "Date": "Wed Aug 19 20:41:19 UTC 2020" ,
       "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
       "classDictionary": [
         {
@@ -209,22 +209,6 @@
             "description": "The Display_Settings class contains one or more classes describing how data should be displayed on a display device."
               , "associationList": [
              {"association": {
-                "identifier": "0001_NASA_PDS_1.disp.Display_Settings.pds.Local_Internal_Reference" ,
-                "title": "Local_Internal_Reference" ,
-                "assocType": "component_of" ,
-                "isAttribute": "false" ,
-                "isChoice": "false" ,
-                "isAny": "false" ,
-                "groupName": "null" ,
-                "minimumCardinality": "1" ,
-                "maximumCardinality": "1" ,
-                "classOrder": "1010" ,
-                "classId": [
-                  "0001_NASA_PDS_1.pds.Local_Internal_Reference"
-                 ]
-              }
-            }
-           , {"association": {
                 "identifier": "0001_NASA_PDS_1.disp.Display_Settings.disp.Display_Direction" ,
                 "title": "Display_Direction" ,
                 "assocType": "component_of" ,
@@ -269,6 +253,69 @@
                 "classOrder": "1040" ,
                 "classId": [
                   "0001_NASA_PDS_1.disp.Movie_Display_Settings"
+                 ]
+              }
+            }
+           ]
+          }
+        }
+      , {
+          "class": {
+            "identifier": "0001_NASA_PDS_1.disp.Local_Internal_Reference" ,
+            "title": "Local_Internal_Reference" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "disp" ,
+            "steward": "img" ,
+            "versionId": "1.0.0.0" ,
+            "isAbstract": "false" ,
+            "isDeprecated": "false" ,
+            "description": "The Local_Internal_Reference class is used to cross-reference other Description Objects in a PDS4 label."
+              , "associationList": [
+             {"association": {
+                "identifier": "0001_NASA_PDS_1.disp.Local_Internal_Reference.pds.comment" ,
+                "title": "comment" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "0" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1010" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.disp.Local_Internal_Reference.pds.comment"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.disp.Local_Internal_Reference.pds.local_identifier_reference" ,
+                "title": "local_identifier_reference" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1020" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.disp.Local_Internal_Reference.pds.local_identifier_reference"
+                 ]
+              }
+            }
+           , {"association": {
+                "identifier": "0001_NASA_PDS_1.disp.Local_Internal_Reference.pds.local_reference_type" ,
+                "title": "local_reference_type" ,
+                "assocType": "attribute_of" ,
+                "isAttribute": "true" ,
+                "isChoice": "false" ,
+                "isAny": "false" ,
+                "groupName": "null" ,
+                "minimumCardinality": "1" ,
+                "maximumCardinality": "1" ,
+                "classOrder": "1030" ,
+                "attributeId": [
+                  "0001_NASA_PDS_1.disp.Local_Internal_Reference.pds.local_reference_type"
                  ]
               }
             }
@@ -568,8 +615,8 @@
             "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
-            "minimumCharacters": "1" ,
-            "maximumCharacters": "255" ,
+            "minimumCharacters": "13" ,
+            "maximumCharacters": "13" ,
             "minimumValue": "Unbounded" ,
             "maximumValue": "Unbounded" ,
             "pattern": "null" ,
@@ -618,8 +665,8 @@
             "isDeprecated": "false" ,
             "dataType": "ASCII_Short_String_Collapsed" ,
             "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
-            "minimumCharacters": "1" ,
-            "maximumCharacters": "255" ,
+            "minimumCharacters": "13" ,
+            "maximumCharacters": "13" ,
             "minimumValue": "Unbounded" ,
             "maximumValue": "Unbounded" ,
             "pattern": "null" ,
@@ -638,6 +685,81 @@
             "steward": "pds" ,
             "versionId": "1.14" ,
             "description": "The comment attribute is a character string expressing one or more remarks or thoughts relevant to the object." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.disp.Local_Internal_Reference.pds.comment" ,
+            "title": "comment" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "pds" ,
+            "steward": "pds" ,
+            "versionId": "1.14" ,
+            "description": "The comment attribute is a character string expressing one or more remarks or thoughts relevant to the object." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Short_String_Collapsed" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Short_String_Collapsed" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.disp.Local_Internal_Reference.pds.local_identifier_reference" ,
+            "title": "local_identifier_reference" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "pds" ,
+            "steward": "pds" ,
+            "versionId": "1.14" ,
+            "description": "The local_identifier_reference attribute provides the value of the local_identifier of the entity described by the referencing class. Note that a local_identifier attribute, with the same value as this local_identifier_reference, must be present within the label." ,
+            "isNillable": "false" ,
+            "isEnumerated": "false" ,
+            "isDeprecated": "false" ,
+            "dataType": "ASCII_Local_Identifier_Reference" ,
+            "dataTypeId": "0001_NASA_PDS_1.pds.ASCII_Local_Identifier_Reference" ,
+            "minimumCharacters": "1" ,
+            "maximumCharacters": "255" ,
+            "minimumValue": "Unbounded" ,
+            "maximumValue": "Unbounded" ,
+            "pattern": "null" ,
+            "unitOfMeasure": "null" ,
+            "unitOfMeasureId": "null" ,
+            "unitId": "null" ,
+            "defaultUnitId": "null"
+          }
+        }
+      , {
+          "attribute": {
+            "identifier": "0001_NASA_PDS_1.disp.Local_Internal_Reference.pds.local_reference_type" ,
+            "title": "local_reference_type" ,
+            "registrationAuthorityId": "0001_NASA_PDS_1" ,
+            "nameSpaceId": "pds" ,
+            "steward": "pds" ,
+            "versionId": "1.14" ,
+            "description": "The local_reference_type attribute provides the name of an association between an entity identified by a local_identifier_reference and another corresponding entity identified by a local_identifier. The values for the local_reference_type are expected to be enumerated for appropriate contexts in the Schematron files of local (i.e., discipline and mission) data dictionaries." ,
             "isNillable": "false" ,
             "isEnumerated": "false" ,
             "isDeprecated": "false" ,
