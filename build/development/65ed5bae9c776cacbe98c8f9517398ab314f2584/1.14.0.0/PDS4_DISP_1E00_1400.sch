@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:disp  Version:1.4.0.0 - Tue Aug 18 20:15:49 UTC 2020 -->
+  <!-- PDS4 Schematron for Name Space Id:disp  Version:1.4.0.0 - Wed Aug 19 19:07:54 UTC 2020 -->
   <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -18,6 +18,24 @@
 		   <!--        lists. These two types of rules have been -->
 		   <!--        merged together in the rules below.       -->
 		   <!-- ================================================ -->
+  <sch:pattern>
+    <sch:rule context="disp:Display_Settings/disp:Local_Internal_Reference">
+      <sch:assert test="disp:local_identifier_reference = //pds:*/pds:*/(pds:Array|pds:Array_2D|pds:Array_2D_Image|pds:Array_2D_Map|pds:Array_2D_Spectrum|pds:Array_3D|pds:Array_3D_Image|pds:Array_3D_Movie|pds:Array_3D_Spectrum)/pds:local_identifier">
+        disp:local_identifier_reference = //pds:*/pds:*/(pds:Array|pds:Array_2D|pds:Array_2D_Image|pds:Array_2D_Map|pds:Array_2D_Spectrum|pds:Array_3D|pds:Array_3D_Image|pds:Array_3D_Movie|pds:Array_3D_Spectrum)/pds:local_identifier</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="pds:Discipline_Area">
+      <sch:assert test="if (disp:Display_Direction) then (disp:Display_Settings/disp:Display_Direction) else true()">
+        if (disp:Display_Direction) then (disp:Display_Settings/disp:Display_Direction) else true()</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:rule context="disp:Display_Settings/disp:Local_Internal_Reference">
+      <sch:assert test="disp:local_reference_type = ('display_settings_to_array')">
+        disp:local_reference_type = ('display_settings_to_array')</sch:assert>
+    </sch:rule>
+  </sch:pattern>
   <sch:pattern>
     <sch:rule context="disp:Discipline_Area">
       <sch:assert test="if (disp:Display_Direction) then (disp:Display_Settings/disp:Display_Direction) else true()">
