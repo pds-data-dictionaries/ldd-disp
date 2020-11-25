@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model
-    href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1301.sch"
+    href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.sch"
     schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
-  <!-- PDS4 Local Data Dictionary Extended Ingest File -->
-  <!-- (Contains Schematron rules and native units definitions.) -->
-  <!-- Generated 2014-02-21T20:12:59Z by eduxbury using mk_img_ldd.pl 
-       from the Imaging Node MySQL img_ldd database -->
+<!-- PDS4 Local Data Dictionary Extended Ingest File for Display        -->
 
 <Ingest_LDD
     xmlns="http://pds.nasa.gov/pds4/pds/v1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 
-                        http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1301.xsd ">
+                        http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd ">
 
   <name>Display</name>
-  <ldd_version_id>1.4.0.0</ldd_version_id>
-  <full_name>Elizabeth D. Rye</full_name>
+  <ldd_version_id>1.5.0.0</ldd_version_id>
+  <dictionary_type>Discipline</dictionary_type>
+  <full_name>Minh Le</full_name>
   <steward_id>img</steward_id>
   <namespace_id>disp</namespace_id>
-  <comment>This dictionary describes how to display Array data on a display
-    device.</comment>
-  <last_modification_date_time>2014-02-21T20:12:59Z</last_modification_date_time>
+  <comment>This dictionary describes how to display Array data on a display device.
+  
+    ## CHANGE LOG ##
 
+    1.5.0.0
+    - ported from 1.4.0.0 schema to LDD for PDS IM 1E00 and 1F00
+  
+  </comment>
+  <last_modification_date_time>2020-11-25T10:00:00Z</last_modification_date_time>
+
+  <!--  Attributes: BEGIN  -->
+  
   <DD_Attribute>
     <name>horizontal_display_axis</name>
     <version_id>1.0</version_id>
@@ -301,108 +307,87 @@
       </DD_Permissible_Value>
       <DD_Permissible_Value>
         <value>false</value>
-        <value_meaning>When looping, the movie should only be played in the forward direction.  This is the default behavior.</value_meaning>
+        <value_meaning>When looping, the movie should only be played in the forward direction. This is the default behavior.</value_meaning>
       </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
 
+  <!-- Attributes: END   -->
+    
+  <!--  Classes: BEGIN   -->
+  
   <DD_Class>
     <name>Display_Settings</name>
-    <version_id>1.0</version_id>
+    <version_id>1.1</version_id>
     <local_identifier>Display_Settings</local_identifier>
     <submitter_name>Elizabeth D. Rye</submitter_name>
     <definition>The Display_Settings class contains one or more classes
-      describing how data should be displayed on a display
-      device.</definition>
+      describing how data should be displayed on a display device.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>true</element_flag>
     <DD_Association>
-        <local_identifier>Local_Internal_Reference</local_identifier>
-        <reference_type>component_of</reference_type>
-        <minimum_occurrences>1</minimum_occurrences>
-        <maximum_occurrences>1</maximum_occurrences>
+      <identifier_reference>pds.Local_Internal_Reference</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <local_identifier>Display_Direction</local_identifier>
+      <identifier_reference>Display_Direction</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <local_identifier>Color_Display_Settings</local_identifier>
+      <identifier_reference>Color_Display_Settings</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <local_identifier>Movie_Display_Settings</local_identifier>
+      <identifier_reference>Movie_Display_Settings</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-  </DD_Class>
-
-  <DD_Class>
-    <name>Local_Internal_Reference</name>
-    <version_id>1.0</version_id>
-    <local_identifier>pds.Local_Internal_Reference</local_identifier>
-    <submitter_name>Elizabeth D. Rye</submitter_name>
-    <definition>The Local_Internal_Reference class is used to
-      cross-reference other Description Objects in a PDS4
-      label.</definition>
-    <DD_Association>
-      <local_identifier>pds.comment</local_identifier>
-        <reference_type>attribute_of</reference_type>
-        <minimum_occurrences>0</minimum_occurrences>
-        <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-        <local_identifier>pds.local_identifier_reference</local_identifier>
-        <reference_type>attribute_of</reference_type>
-        <minimum_occurrences>1</minimum_occurrences>
-        <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-         <local_identifier>pds.local_reference_type</local_identifier>
-        <reference_type>attribute_of</reference_type>
-        <minimum_occurrences>1</minimum_occurrences>
-        <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
   </DD_Class>
 
   <DD_Class>
     <name>Display_Direction</name>
-    <version_id>1.0</version_id>
+    <version_id>1.1</version_id>
     <local_identifier>Display_Direction</local_identifier>
     <submitter_name>Elizabeth D. Rye</submitter_name>
     <definition>The Display_Direction class specifies how two of the
       dimensions of an Array object should be displayed in the vertical
       (line) and horizontal (sample) dimensions of a display
       device.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
     <DD_Association>
-        <local_identifier>pds.comment</local_identifier>
-        <reference_type>attribute_of</reference_type>
-        <minimum_occurrences>0</minimum_occurrences>
-        <maximum_occurrences>1</maximum_occurrences>
+      <identifier_reference>pds.comment</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <local_identifier>horizontal_display_axis</local_identifier>
+      <identifier_reference>horizontal_display_axis</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <local_identifier>horizontal_display_direction</local_identifier>
+      <identifier_reference>horizontal_display_direction</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <local_identifier>vertical_display_axis</local_identifier>
+      <identifier_reference>vertical_display_axis</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <local_identifier>vertical_display_direction</local_identifier>
+      <identifier_reference>vertical_display_direction</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -411,38 +396,40 @@
 
   <DD_Class>
     <name>Color_Display_Settings</name>
-    <version_id>1.0</version_id>
+    <version_id>1.1</version_id>
     <local_identifier>Color_Display_Settings</local_identifier>
     <submitter_name>Elizabeth D. Rye</submitter_name>
     <definition>The Color_Display_Settings class provides guidance to data
       users on how to display a multi-banded Array object on a
       color-capable display device.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
     <DD_Association>
-      <local_identifier>color_display_axis</local_identifier>
+      <identifier_reference>color_display_axis</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-        <local_identifier>pds.comment</local_identifier>
-        <reference_type>attribute_of</reference_type>
-        <minimum_occurrences>0</minimum_occurrences>
-        <maximum_occurrences>1</maximum_occurrences>
+      <identifier_reference>pds.comment</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <local_identifier>red_channel_band</local_identifier>
+      <identifier_reference>red_channel_band</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <local_identifier>green_channel_band</local_identifier>
+      <identifier_reference>green_channel_band</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <local_identifier>blue_channel_band</local_identifier>
+      <identifier_reference>blue_channel_band</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
@@ -451,81 +438,62 @@
 
   <DD_Class>
     <name>Movie_Display_Settings</name>
-    <version_id>1.0</version_id>
+    <version_id>1.1</version_id>
     <local_identifier>Movie_Display_Settings</local_identifier>
     <submitter_name>Elizabeth D. Rye</submitter_name>
     <definition>The Movie_Display_Settings class provides default values
       for the display of a multi-banded Array using a software application
       capable of displaying video content.</definition>
+    <abstract_flag>false</abstract_flag>
+    <element_flag>false</element_flag>
     <DD_Association>
-      <local_identifier>time_display_axis</local_identifier>
+      <identifier_reference>time_display_axis</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-        <local_identifier>pds.comment</local_identifier>
-        <reference_type>attribute_of</reference_type>
-        <minimum_occurrences>0</minimum_occurrences>
-        <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <local_identifier>frame_rate</local_identifier>
+      <identifier_reference>pds.comment</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <local_identifier>loop_flag</local_identifier>
+      <identifier_reference>frame_rate</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <local_identifier>loop_count</local_identifier>
+      <identifier_reference>loop_flag</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <local_identifier>loop_delay</local_identifier>
+      <identifier_reference>loop_count</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <local_identifier>loop_back_and_forth_flag</local_identifier>
+      <identifier_reference>loop_delay</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>loop_back_and_forth_flag</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
       <maximum_occurrences>1</maximum_occurrences>
     </DD_Association>
   </DD_Class>
 
-<!--
-  <DD_Rule>
-    <local_identifier>disp:Display_Settings/disp:Local_Internal_Reference</local_identifier>
-    <rule_context>Display_Settings/disp:Local_Internal_Referenc</rule_context>
-    <DD_Assert>
-      <test>disp:local_identifier_reference = //pds:*/pds:*/(pds:Array|pds:Array_2D|pds:Array_2D_Image|pds:Array_2D_Map|pds:Array_2D_Spectrum|pds:Array_3D|pds:Array_3D_Image|pds:Array_3D_Movie|pds:Array_3D_Spectrum)/pds:local_identifier</test>
-      <message>Display Dictionary: In the disp:Local_Internal_Reference class, the value of the disp:local_identifier_reference must match the value of the pds:local_identifer of an Array class or sub-class within the File_Area.</message>
-    </DD_Assert>
-  </DD_Rule>
-
-  <DD_Rule>
-    <context>pds:Discipline_Area</context>
-    <DD_Assert>
-      <test>if (disp:Display_Direction) then (disp:Display_Settings/disp:Display_Direction) else true()</test>
-      <message>Display Dictionary: If the Display_Direction class is in the label, it must be contained in a Display_Settings class.</message>
-    </DD_Assert>
-  </DD_Rule>
-
-  <DD_Rule>
-    <context>disp:Display_Settings/disp:Local_Internal_Reference</context>
-    <DD_Assert>
-      <test>disp:local_reference_type = ('display_settings_to_array')</test>
-      <message>Display_Dictionary: In the disp:Local_Internal_Reference class, the value of the disp:local_reference_type must be 'display_settings_to_array'.</message>
-    </DD_Assert>
-  </DD_Rule>
--->
+  <!--   Classes: END    -->
+  
+  <!-- Schematron Rule definitions: BEGIN                              -->
+  
+  <!-- Schematron Rule definitions: END                                -->
   
 </Ingest_LDD>
