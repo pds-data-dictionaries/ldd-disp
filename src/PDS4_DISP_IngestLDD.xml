@@ -14,7 +14,7 @@
   <name>Display</name>
   <ldd_version_id>1.5.0.0</ldd_version_id>
   <dictionary_type>Discipline</dictionary_type>
-  <full_name>Minh Le</full_name>
+  <full_name>Trent Hare</full_name>
   <steward_id>img</steward_id>
   <namespace_id>disp</namespace_id>
   <comment>This dictionary describes how to display Array data on a display device.
@@ -23,9 +23,11 @@
 
     1.5.0.0
     - ported from 1.4.0.0 schema to LDD for PDS IM 1E00 and 1F00
+    - added rule, Image_Display_Geometry_0, to add at least one 
+      local_reference_type, for now - 'display_to_data_object'
   
   </comment>
-  <last_modification_date_time>2020-11-25T10:00:00Z</last_modification_date_time>
+  <last_modification_date_time>2020-12-04T17:00:00Z</last_modification_date_time>
 
   <!--  Attributes: BEGIN  -->
   
@@ -493,7 +495,17 @@
   <!--   Classes: END    -->
   
   <!-- Schematron Rule definitions: BEGIN                              -->
-  
+  <DD_Rule>
+    <local_identifier>Image_Display_Geometry_0</local_identifier>
+    <rule_context>geom:Image_Display_Geometry/pds:Local_Internal_Reference</rule_context>
+    <DD_Rule_Statement>
+        <rule_type>Assert</rule_type>
+        <rule_test>pds:local_reference_type = 'display_to_data_object'
+        </rule_test>
+        <rule_message>For Local_Internal_Reference in geom:Image_Display_Geometry, local_reference_type must equal 'display_to_data_object'.
+        </rule_message>
+    </DD_Rule_Statement>
+</DD_Rule>
   <!-- Schematron Rule definitions: END                                -->
   
 </Ingest_LDD>
