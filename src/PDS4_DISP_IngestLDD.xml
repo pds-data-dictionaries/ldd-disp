@@ -23,7 +23,7 @@
 
     1.5.0.0
     - ported from 1.4.0.0 schema to LDD for PDS IM 1E00 and 1F00
-    - added rule, Image_Display_Geometry_0, to add at least one 
+    - added rule, Display_Settings_0, to add at least one 
       local_reference_type, for now - 'display_to_data_object'
   
   </comment>
@@ -496,13 +496,13 @@
   
   <!-- Schematron Rule definitions: BEGIN                              -->
   <DD_Rule>
-    <local_identifier>Image_Display_Geometry_0</local_identifier>
-    <rule_context>geom:Image_Display_Geometry/pds:Local_Internal_Reference</rule_context>
+    <local_identifier>Display_Settings_0</local_identifier>
+    <rule_context>disp:Display_Settings/pds:Local_Internal_Reference</rule_context>
     <DD_Rule_Statement>
         <rule_type>Assert</rule_type>
         <rule_test>pds:local_reference_type = 'display_to_data_object'
         </rule_test>
-        <rule_message>For Local_Internal_Reference in geom:Image_Display_Geometry, local_reference_type must equal 'display_to_data_object'.
+        <rule_message>For Local_Internal_Reference in disp:Display_Settings, local_reference_type must equal 'display_to_data_object'.
         </rule_message>
     </DD_Rule_Statement>
 </DD_Rule>
