@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:disp  Version:1.5.0.0 - Mon Dec 14 19:51:22 UTC 2020 -->
-  <!-- Generated from the PDS4 Information Model Version 1.13.0.0 - System Build 10a -->
+  <!-- PDS4 XML/Schema for Name Space Id:disp  Version:1.5.0.0 - Mon Dec 14 20:24:00 UTC 2020 -->
+  <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
-  <!-- 1.13.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.14.0.0 - pds: - Common Dictionary                                       -->
   <!-- 1.5.0.0 - disp: - Display                                                 -->
   <!--   file:/home/runner/work/ldd-disp/ldd-disp/src/PDS4_DISP_IngestLDD.xml    -->
   <!--                                                                           -->
@@ -16,7 +16,7 @@
     attributeFormDefault="unqualified"
     version="1.5.0.0">
  
-    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.xsd"/>
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd"/>
  
   <xs:annotation>
     <xs:documentation>
@@ -28,6 +28,8 @@ This dictionary describes how to display Array data on a display device.
     - ported from 1.4.0.0 schema to LDD for PDS IM 1E00 and 1F00
     - added one rule, Display_Settings_0, to add at least one 
       local_reference_type, for now - 'display_settings_to_array'
+      - This rule also seems to be inserted during LDDtool build 
+        so currently it is being duplicated.
   
   
     </xs:documentation>
