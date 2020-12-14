@@ -24,10 +24,10 @@
     1.5.0.0
     - ported from 1.4.0.0 schema to LDD for PDS IM 1E00 and 1F00
     - added one rule, Display_Settings_0, to add at least one 
-      local_reference_type, for now - 'display_to_data_object'
+      local_reference_type, for now - 'display_settings_to_array'
   
   </comment>
-  <last_modification_date_time>2020-12-04T17:00:00Z</last_modification_date_time>
+  <last_modification_date_time>2020-12-14T12:48:00Z</last_modification_date_time>
 
   <!--  Attributes: BEGIN  -->
   
@@ -500,9 +500,9 @@
     <rule_context>disp:Display_Settings/pds:Local_Internal_Reference</rule_context>
     <DD_Rule_Statement>
         <rule_type>Assert</rule_type>
-        <rule_test>pds:local_reference_type = 'display_to_data_object'
+        <rule_test>pds:local_reference_type = 'display_settings_to_array'
         </rule_test>
-        <rule_message>For Local_Internal_Reference in disp:Display_Settings, local_reference_type must equal 'display_to_data_object'.
+        <rule_message>For Local_Internal_Reference in disp:Display_Settings, local_reference_type must equal 'display_settings_to_array'.
         </rule_message>
     </DD_Rule_Statement>
 </DD_Rule>
