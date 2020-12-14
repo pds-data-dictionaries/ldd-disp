@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:disp  Version:1.4.0.0 - Wed Aug 19 20:41:19 UTC 2020 -->
+  <!-- PDS4 XML/Schema for Name Space Id:disp  Version:1.5.0.0 - Mon Dec 14 19:25:41 UTC 2020 -->
   <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.14.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.4.0.0 - disp: - Display                                                 -->
+  <!-- 1.5.0.0 - disp: - Display                                                 -->
   <!--   file:/home/runner/work/ldd-disp/ldd-disp/src/PDS4_DISP_IngestLDD.xml    -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -14,17 +14,26 @@
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.4.0.0">
+    version="1.5.0.0">
  
     <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd"/>
  
   <xs:annotation>
     <xs:documentation>
-This dictionary describes how to display Array data on a display
-    device.
+This dictionary describes how to display Array data on a display device.
+  
+    ## CHANGE LOG ##
+
+    1.5.0.0
+    - ported from 1.4.0.0 schema to LDD for PDS IM 1E00 and 1F00
+    - added rule, Display_Settings_0, to add at least one 
+      local_reference_type, for now - 'display_to_data_object'
+  
+  
     </xs:documentation>
   </xs:annotation>
  
+  <xs:element name="Display_Settings" type="disp:Display_Settings"> </xs:element>
 
   <xs:complexType name="Color_Display_Settings">
     <xs:annotation>
@@ -68,22 +77,10 @@ This dictionary describes how to display Array data on a display
         device.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element ref="pds:Local_Internal_Reference" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="Display_Direction" type="disp:Display_Direction" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="Color_Display_Settings" type="disp:Color_Display_Settings" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="Movie_Display_Settings" type="disp:Movie_Display_Settings" minOccurs="0" maxOccurs="1"> </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="Local_Internal_Reference">
-    <xs:annotation>
-      <xs:documentation>The Local_Internal_Reference class is used to
-        cross-reference other Description Objects in a PDS4
-        label.</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="comment" type="pds:comment" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="local_identifier_reference" type="pds:local_identifier_reference" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="local_reference_type" type="pds:local_reference_type" minOccurs="1" maxOccurs="1"> </xs:element>
     </xs:sequence>
   </xs:complexType>
 
@@ -319,21 +316,4 @@ This dictionary describes how to display Array data on a display
      <xs:maxLength value="13"/>
 	   </xs:restriction>
   </xs:simpleType>
- 
-  <xs:annotation>
-    <xs:documentation>
-[
-  {
-    "dataDictionary": {
-      "Title": "PDS4 Data Dictionary" ,
-      "Version": "1.14.0.0" ,
-      "Date": "Wed Aug 19 20:41:19 UTC 2020" ,
-      "Description": "This document is a dump of the contents of the PDS4 Data Dictionary" ,
-      "PropertyMapDictionary": [
-      ]
-    }
-  }
-]
-    </xs:documentation>
-  </xs:annotation>
 </xs:schema>
