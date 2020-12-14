@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:disp  Version:1.5.0.0 - Mon Dec 14 19:42:06 UTC 2020 -->
+  <!-- PDS4 XML/Schema for Name Space Id:disp  Version:1.5.0.0 - Mon Dec 14 19:51:13 UTC 2020 -->
   <!-- Generated from the PDS4 Information Model Version 1.15.0.0 - System Build 11a -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
@@ -27,7 +27,7 @@ This dictionary describes how to display Array data on a display device.
     1.5.0.0
     - ported from 1.4.0.0 schema to LDD for PDS IM 1E00 and 1F00
     - added one rule, Display_Settings_0, to add at least one 
-      local_reference_type, for now - 'display_to_data_object'
+      local_reference_type, for now - 'display_settings_to_array'
   
   
     </xs:documentation>

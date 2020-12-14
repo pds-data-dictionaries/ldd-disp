@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Mon Dec 14 19:42:06 UTC 2020
+   Time                   Mon Dec 14 19:51:13 UTC 2020
    Common Schema          [PDS4_PDS_1F00.xsd]
    Common Schematron      [PDS4_PDS_1F00.sch]
    IM Version Id:         1.15.0.0
@@ -51,10 +51,10 @@ Parsed Input - Header:
     1.5.0.0
     - ported from 1.4.0.0 schema to LDD for PDS IM 1E00 and 1F00
     - added one rule, Display_Settings_0, to add at least one 
-      local_reference_type, for now - 'display_to_data_object'
+      local_reference_type, for now - 'display_settings_to_array'
   
   
-   Last Modification Time 2020-12-04T17:00:00Z
+   Last Modification Time 2020-12-14T12:48:00Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
