@@ -1,13 +1,13 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        11.3.2
-   LDD Version Id:        1.4.0.0
+   LDDTool Version        0.0.0
+   LDD Version Id:        1.5.0.0
    LDD Label Version Id:  1.0
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Wed Aug 19 20:41:19 UTC 2020
+   Time                   Mon Dec 14 19:25:41 UTC 2020
    Common Schema          [PDS4_PDS_1E00.xsd]
    Common Schematron      [PDS4_PDS_1E00.sch]
    IM Version Id:         1.14.0.0
@@ -29,38 +29,32 @@ Parameters:
    Merge with Master      false
 
 Summary:
-   Classes                5
+   Classes                4
    Attributes             14
-   Associations           24
-   Error messages         4
+   Associations           21
+   Error messages         0
    Warning messages       0
-   Information messages   10
+   Information messages   0
 
 Detailed validation messages
-   ERROR    Class:0001_NASA_PDS_1.disp.Display_Settings  Association:Local_Internal_Reference  Class:Local_Internal_Reference - Missing Component Class
-   ERROR    Association: Local_Internal_Reference - Missing Component - Reference Type: component_of
-   ERROR    Class:  - No local dictionary may define a class called Local_Internal_Reference.
-   ERROR    Class:  - At least one class must be defined as an xs:Element. (<element_flag> set to "true")
-   INFO     Attribute: <horizontal_display_direction> - The default minimum characters provided by the attribute's data type is being overridden with 13
-   INFO     Attribute: <horizontal_display_direction> - The default maximum characters provided by the attribute's data type is being overridden with 13
-   INFO     Attribute: <vertical_display_direction> - The default minimum characters provided by the attribute's data type is being overridden with 13
-   INFO     Attribute: <vertical_display_direction> - The default maximum characters provided by the attribute's data type is being overridden with 13
-   INFO     Attribute: <red_channel_band> - The default minimum value provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <green_channel_band> - The default minimum value provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <blue_channel_band> - The default minimum value provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <frame_rate> - The default minimum value provided by the attribute's data type is being overridden with 1.0
-   INFO     Attribute: <loop_count> - The default minimum value provided by the attribute's data type is being overridden with 1
-   INFO     Attribute: <loop_delay> - The default minimum value provided by the attribute's data type is being overridden with 0.0
 
 Parsed Input - Header:
    LDD Name               Display
-   LDD Version            1.4.0.0
-   Full Name              Elizabeth D. Rye
+   LDD Version            1.5.0.0
+   Full Name              Trent Hare
    Steward                img
    Namespace Id           disp
-   Comment                This dictionary describes how to display Array data on a display
-    device.
-   Last Modification Time 2014-02-21T20:12:59Z
+   Comment                This dictionary describes how to display Array data on a display device.
+  
+    ## CHANGE LOG ##
+
+    1.5.0.0
+    - ported from 1.4.0.0 schema to LDD for PDS IM 1E00 and 1F00
+    - added rule, Display_Settings_0, to add at least one 
+      local_reference_type, for now - 'display_to_data_object'
+  
+  
+   Last Modification Time 2020-12-04T17:00:00Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:
@@ -157,8 +151,8 @@ Parsed Input - Classes:
 
    Associations
 
-      local identifier      Local_Internal_Reference
-      minimum occurrences   1
+      local identifier      pds.Local_Internal_Reference
+      minimum occurrences   0
       maximum occurrences   1
       reference type        component_of
 
@@ -176,29 +170,6 @@ Parsed Input - Classes:
       minimum occurrences   0
       maximum occurrences   1
       reference type        component_of
-
-   name                   Local_Internal_Reference
-   description            The Local_Internal_Reference class is used to cross-reference other Description Objects in a PDS4 label.
-   is abstract            false
-   is choice              false
-   subclass of            USER
-
-   Associations
-
-      local identifier      pds.comment
-      minimum occurrences   0
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      pds.local_identifier_reference
-      minimum occurrences   1
-      maximum occurrences   1
-      reference type        attribute_of
-
-      local identifier      pds.local_reference_type
-      minimum occurrences   1
-      maximum occurrences   1
-      reference type        attribute_of
 
    name                   Display_Direction
    description            The Display_Direction class specifies how two of the dimensions of an Array object should be displayed in the vertical (line) and horizontal (sample) dimensions of a display device.
