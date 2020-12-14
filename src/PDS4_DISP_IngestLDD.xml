@@ -23,7 +23,7 @@
 
     1.5.0.0
     - ported from 1.4.0.0 schema to LDD for PDS IM 1E00 and 1F00
-    - added rule, Display_Settings_0, to add at least one 
+    - added one rule, Display_Settings_0, to add at least one 
       local_reference_type, for now - 'display_to_data_object'
   
   </comment>
