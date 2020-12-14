@@ -23,10 +23,13 @@
 
     1.5.0.0
     - ported from 1.4.0.0 schema to LDD for PDS IM 1E00 and 1F00
-    - note commentented out rule for Display_Settings_0, being introduced during LDDtool build
+    - added one rule, Display_Settings_0, to add at least one 
+      local_reference_type, for now - 'display_settings_to_array'
+      - This rule also seems to be inserted during LDDtool build 
+        so currently it is being duplicated.
   
   </comment>
-  <last_modification_date_time>2020-12-14T12:48:00Z</last_modification_date_time>
+  <last_modification_date_time>2020-12-14T13:10:00Z</last_modification_date_time>
 
   <!--  Attributes: BEGIN  -->
   
@@ -495,7 +498,10 @@
   
   <!-- Schematron Rule definitions: BEGIN                              -->
 
-  <!-- This rule is being introduced from somewhere, maybe PDS IM? during LDDtool build...
+  <!-- This rule is also being introduced from somewhere else, 
+       maybe from PDS IM (?) during LDDtool build. For now this rule
+       will be repeated as this is required to pass LDDtool build.
+  -->
   <DD_Rule>
     <local_identifier>Display_Settings_0</local_identifier>
     <rule_context>disp:Display_Settings/pds:Local_Internal_Reference</rule_context>
@@ -507,7 +513,6 @@
         </rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
-  -->
 
   <!-- Schematron Rule definitions: END                                -->
   
