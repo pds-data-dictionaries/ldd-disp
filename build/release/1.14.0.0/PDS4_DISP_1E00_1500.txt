@@ -7,7 +7,7 @@ Configuration:
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Tue Dec 15 19:54:49 UTC 2020
+   Time                   Tue Dec 15 20:07:57 UTC 2020
    Common Schema          [PDS4_PDS_1E00.xsd]
    Common Schematron      [PDS4_PDS_1E00.sch]
    IM Version Id:         1.14.0.0
@@ -58,7 +58,7 @@ Parsed Input - Header:
         so currently it is being duplicated.
   
   
-   Last Modification Time 2020-12-15T12:53:00Z
+   Last Modification Time 2020-12-15T13:06:00Z
    PDS4 Merge Flag        false
 
 Parsed Input - Attributes:

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:disp  Version:1.5.0.0 - Tue Dec 15 19:54:53 UTC 2020 -->
+  <!-- PDS4 Schematron for Name Space Id:disp  Version:1.5.0.0 - Tue Dec 15 20:07:52 UTC 2020 -->
   <!-- Generated from the PDS4 Information Model Version 1.15.0.0 - System Build 11a -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -26,7 +26,7 @@
         </sch:assert>
       <sch:assert test="pds:local_reference_type = 'display_settings_to_array'
         ">
-        For Local_Internal_Reference in disp:Display_Settings, local_reference_type must equal 'display_settings_to_array'.
+        Display_Dictionary: For Local_Internal_Reference in disp:Display_Settings, local_reference_type must equal 'display_settings_to_array'.
         </sch:assert>
     </sch:rule>
   </sch:pattern>
