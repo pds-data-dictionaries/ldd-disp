@@ -31,7 +31,7 @@
         so currently it is being duplicated.
   
   </comment>
-  <last_modification_date_time>2020-12-15T12:53:00Z</last_modification_date_time>
+  <last_modification_date_time>2020-12-15T13:06:00Z</last_modification_date_time>
 
   <!--  Attributes: BEGIN  -->
   
@@ -518,7 +518,7 @@
         <rule_type>Assert</rule_type>
         <rule_test>pds:local_reference_type = 'display_settings_to_array'
         </rule_test>
-        <rule_message>For Local_Internal_Reference in disp:Display_Settings, local_reference_type must equal 'display_settings_to_array'.
+        <rule_message>Display_Dictionary: For Local_Internal_Reference in disp:Display_Settings, local_reference_type must equal 'display_settings_to_array'.
         </rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
