@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:disp  Version:1.5.0.0 - Mon Dec 14 20:24:00 UTC 2020 -->
+  <!-- PDS4 Schematron for Name Space Id:disp  Version:1.5.0.0 - Tue Dec 15 19:54:49 UTC 2020 -->
   <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -20,6 +20,10 @@
 		   <!-- ================================================ -->
   <sch:pattern>
     <sch:rule context="disp:Display_Settings/pds:Local_Internal_Reference">
+      <sch:assert test="pds:local_identifier_reference = //pds:*/pds:*/(pds:Array|pds:Array_2D|pds:Array_2D_Image|pds:Array_2D_Map|pds:Array_2D_Spectrum|pds:Array_3D|pds:Array_3D_Image|pds:Array_3D_Movie|pds:Array_3D_Spectrum)/pds:local_identifier
+        ">
+        Display Dictionary: In the pds:Local_Internal_Reference class, the value of the pds:local_identifier_reference must match the value of the pds:local_identifer of an Array class or sub-class within the File_Area.
+        </sch:assert>
       <sch:assert test="pds:local_reference_type = 'display_settings_to_array'
         ">
         For Local_Internal_Reference in disp:Display_Settings, local_reference_type must equal 'display_settings_to_array'.
