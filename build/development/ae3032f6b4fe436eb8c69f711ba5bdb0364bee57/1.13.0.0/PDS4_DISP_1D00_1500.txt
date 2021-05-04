@@ -1,18 +1,18 @@
 PDS4 Local Data Dictionary Processing Report
 
 Configuration:
-   LDDTool Version        12.0.0
+   LDDTool Version        13.0.1
    LDD Version Id:        1.5.0.0
    LDD Label Version Id:  1.0
    LDD Discipline (T/F):  true
    LDD Namespace URL:     http://pds.nasa.gov/pds4/
    LDD URN Prefix:        urn:nasa:pds:
-   Time                   Tue Dec 15 22:16:29 UTC 2020
-   Common Schema          [PDS4_PDS_1F00.xsd]
-   Common Schematron      [PDS4_PDS_1F00.sch]
-   IM Version Id:         1.15.0.0
+   Time                   Tue May 04 04:54:47 UTC 2021
+   Common Schema          [PDS4_PDS_1D00.xsd]
+   Common Schematron      [PDS4_PDS_1D00.sch]
+   IM Version Id:         1.13.0.0
    IM Namespace Id:       pds
-   IM Label Version Id:   1.21
+   IM Label Version Id:   1.0
    IM Object Model        [UpperModel.pont]
    IM Data Dictionary     [dd11179.pins]
    IM Configuration File  [MDPTNConfigClassDisp.xml]
@@ -64,84 +64,84 @@ Parsed Input - Header:
 Parsed Input - Attributes:
 
    name                   horizontal_display_axis
-   version                1.15
+   version                1.13
    value data type        ASCII_Short_String_Collapsed
    description            The horizontal_display_axis attribute identifies, by name, the axis of an Array (or Array subclass) that is intended to be displayed in the horizontal or "sample" dimension on a display device. The value of this attribute must match the value of one, and only one, axis_name attribute in an Axis_Array class of the associated Array.
 
    name                   horizontal_display_direction
-   version                1.15
+   version                1.13
    value data type        ASCII_Short_String_Collapsed
    description            The horizontal_display_direction attribute specifies the direction across the screen of a display device that data along the horizontal axis of an Array is supposed to be displayed.
    minimum characters     13
    maximum characters     13
 
    name                   vertical_display_axis
-   version                1.15
+   version                1.13
    value data type        ASCII_Short_String_Collapsed
    description            The vertical_display_axis attribute identifies, by name, the axis of an Array (or Array subclass) that is intended to be displayed in the vertical or "line" dimension on a display device. The value of this attribute must match the value of one, and only one, axis_name attribute in an Axis_Array class of the associated Array.
 
    name                   vertical_display_direction
-   version                1.15
+   version                1.13
    value data type        ASCII_Short_String_Collapsed
    description            The vertical_display_direction attribute specifies the direction along the screen of a display device that data along the vertical axis of an Array is supposed to be displayed.
    minimum characters     13
    maximum characters     13
 
    name                   color_display_axis
-   version                1.15
+   version                1.13
    value data type        ASCII_Short_String_Collapsed
    description            The color_display_axis attribute identifies, by name, the axis of an Array (or Array subclass) that is intended to be displayed in the color dimension of a display device. I.e., bands from this dimension will be loaded into the red, green, and blue bands of the display device. The value of this attribute must match the value of one, and only one, axis_name attribute in an Axis_Array class of the associated Array.
 
    name                   red_channel_band
-   version                1.15
+   version                1.13
    value data type        ASCII_Integer
    description            The red_channel_band attribute identifies the number of the band, along the band axis, that should be loaded, by default, into the red channel of a display device. The first band along the band axis has band number 1.
    minimum value          1
 
    name                   green_channel_band
-   version                1.15
+   version                1.13
    value data type        ASCII_Integer
    description            The green_channel_band attribute identifies the number of the band, along the band axis, that should be loaded, by default, into the green channel of a display device. The first band along the band axis has band number 1.
    minimum value          1
 
    name                   blue_channel_band
-   version                1.15
+   version                1.13
    value data type        ASCII_Integer
    description            The blue_channel_band attribute identifies the number of the band, along the band axis, that should be loaded, by default, into the blue channel of a display device. The first band along the band axis has band number 1.
    minimum value          1
 
    name                   time_display_axis
-   version                1.15
+   version                1.13
    value data type        ASCII_Short_String_Collapsed
    description            The time_display_axis attribute identifies, by name, the axis of an Array (or Array subclass), the bands of which are intended to be displayed sequentially in time on a display device. The frame_rate attribute, if present, provides the rate at which these bands are to be displayed.
 
    name                   frame_rate
-   version                1.15
+   version                1.13
    value data type        ASCII_Real
    description            The frame_rate attribute indicates the number of still pictures (or frames) that should be displayed per unit of time in a video. Note this is NOT necessarily the same as the rate at which the images were acquired.
    minimum value          1.0
    unit of measure type   Units_of_Frame_Rate
 
    name                   loop_flag
-   version                1.15
+   version                1.13
    value data type        ASCII_Boolean
    description            The loop_flag attribute specifies whether or not a movie object should be played repeatedly without prompting from the user.
 
    name                   loop_count
-   version                1.15
+   version                1.13
    value data type        ASCII_Integer
    description            The loop_count attribute specifies the number of times a movie should be "looped" or replayed before stopping.
    minimum value          1
 
    name                   loop_delay
-   version                1.15
+   version                1.13
    value data type        ASCII_Real
    description            The loop_delay attribute specifies the amount of time to pause between "loops" or repeated playbacks of a movie.
    minimum value          0.0
    unit of measure type   Units_of_Time
 
    name                   loop_back_and_forth_flag
-   version                1.15
+   version                1.13
    value data type        ASCII_Boolean
    description            The loop_back_and_forth_flag attribute specifies whether or not a movie should only be "looped" or played repeatedly in the forward direction, or whether it should be played forward followed by played in reverse, iteratively.
 
