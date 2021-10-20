@@ -12,7 +12,7 @@
                         http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd ">
 
   <name>Display</name>
-  <ldd_version_id>1.5.0.0</ldd_version_id>
+  <ldd_version_id>1.5.1.0</ldd_version_id>
   <dictionary_type>Discipline</dictionary_type>
   <full_name>Trent Hare</full_name>
   <steward_id>img</steward_id>
@@ -29,9 +29,12 @@
       the local_identifier attribute under Array_*
       - This rule also seems to be inserted during LDDtool build 
         so currently it is being duplicated.
+      
+    1.5.1.0 
+    - Added display_settings_validate_axis rules and tests by Jesse S.
   
   </comment>
-  <last_modification_date_time>2020-12-15T13:06:00Z</last_modification_date_time>
+  <last_modification_date_time>2021-10-20T14:36:00Z</last_modification_date_time>
 
   <!--  Attributes: BEGIN  -->
   
