@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:disp  Version:1.5.0.0 - Sun Oct 31 20:43:55 UTC 2021 -->
-  <!-- Generated from the PDS4 Information Model Version 1.14.0.0 - System Build 10b -->
+  <!-- PDS4 Schematron for Name Space Id:disp  Version:1.5.0.0 - Sun Oct 31 20:44:06 UTC 2021 -->
+  <!-- Generated from the PDS4 Information Model Version 1.17.0.0 - System Build 12.0 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
 
@@ -33,13 +33,6 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:rule context="disp:Discipline_Area">
-      <sch:assert test="if (disp:Display_Direction) then (disp:Display_Settings/disp:Display_Direction) else true()">
-        <title>disp:Discipline_Area/logical_identifier</title>
-        Display Dictionary: If the Display_Direction class is in the label, it must be contained in a Display_Settings class.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:rule context="disp:Display_Direction/disp:horizontal_display_direction">
       <sch:assert test=". = ('Left to Right', 'Right to Left')">
         <title>disp:Display_Direction/disp:horizontal_display_direction/disp:horizontal_display_direction</title>
@@ -51,16 +44,6 @@
       <sch:assert test=". = ('Bottom to Top', 'Top to Bottom')">
         <title>disp:Display_Direction/disp:vertical_display_direction/disp:vertical_display_direction</title>
         The attribute disp:Display_Direction/disp:vertical_display_direction must be equal to one of the following values 'Bottom to Top', 'Top to Bottom'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="disp:Display_Settings/pds:Local_Internal_Reference">
-      <sch:assert test="pds:local_identifier_reference = //pds:*/pds:*/(pds:Array|pds:Array_2D|pds:Array_2D_Image|pds:Array_2D_Map|pds:Array_2D_Spectrum|pds:Array_3D|pds:Array_3D_Image|pds:Array_3D_Movie|pds:Array_3D_Spectrum)/pds:local_identifier">
-        <title>disp:Display_Settings/pds:Local_Internal_Reference/local_identifier_reference</title>
-        Display Dictionary: In the pds:Local_Internal_Reference class, the value of the pds:local_identifier_reference must match the value of the pds:local_identifer of an Array class or sub-class within the File_Area.</sch:assert>
-      <sch:assert test="pds:local_reference_type = ('display_settings_to_array')">
-        <title>disp:Display_Settings/pds:Local_Internal_Reference/local_reference_type</title>
-        Display_Dictionary: In the pds:Local_Internal_Reference class, the value of the pds:local_reference_type must be 'display_settings_to_array'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
@@ -89,9 +72,9 @@
   </sch:pattern>
   <sch:pattern>
     <sch:rule context="disp:Movie_Display_Settings/disp:loop_delay">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr')">
+      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
         <title>disp:Movie_Display_Settings/disp:loop_delay/disp:loop_delay</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 's', 'yr'.</sch:assert>
+        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
