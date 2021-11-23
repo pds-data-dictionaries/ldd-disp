@@ -20,7 +20,7 @@ The build process insures compatiblity of the LDD with the core information mode
 This LDD has been released for the following versions of the PDS4 information model:
 
 - [development](build/development)
-- [PDS4 IM v1.B.0.0 (DISP LDD v1.4.0.0)](build/release/1.B.0.0_1.4.0.0)
+- [releases](build/release)
 
 
 ## Notes

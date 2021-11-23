@@ -31,10 +31,10 @@
         so currently it is being duplicated.
       
     1.5.1.0 
-    - Added display_settings_validate_axis rules and tests by Jesse S.
+    - Added display_settings_validate_axis rules and tests for the new rules by Jesse S.
   
   </comment>
-  <last_modification_date_time>2021-10-20T14:36:00Z</last_modification_date_time>
+  <last_modification_date_time>2021-10-20T14:40:00Z</last_modification_date_time>
 
   <!--  Attributes: BEGIN  -->
   
