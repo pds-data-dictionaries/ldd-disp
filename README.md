@@ -1,41 +1,28 @@
-# Display Local Data Dictionary (LDD)
+# Display Discipline Namespace
 
-The Display dictionary contains high level classes and attributes used in imaging and spectrometer products.
-It also contains classes with attributes used during active mission operations.
+The Display discipline namespace _contains high level classes and attributes used in imaging and spectrometer products. It also contains classes with attributes used during active mission operations._
 
-Steward: [IMG Node](https://pds-imaging.jpl.nasa.gov/)
+Steward: [Trent Hare, IMG Node](@thareUSGS)
 
-Only one LDD source version is kept such that it can be managed by github.
+# Documentation
 
-- [src](src)
-
-## Versions
-
-A Local Data Dictionary (LDD) is built for selected versions of the [PDS4 Information Model](https://pds.nasa.gov/pds4/doc/im/).
-The build process insures compatiblity of the LDD with the core information model.
+* [User Guide](docs/user-guide.md)
+* [Detailed Documentation](docs)
+* [Other PDS Namespace Documentation](https://pds-data-dictionaries.github.io/)
 
 
-## Builds
+# Latest Release
 
-This LDD has been released for the following versions of the PDS4 information model:
+* [PDS Namespace](https://pds.nasa.gov/datastandards/dictionaries/#disp)
+* [GitHub](../../../releases/latest)
+* Change log [CHANGELOG.md](CHANGELOG.md)
 
-- [development](build/development)
-- [releases](build/release)
 
-
-## Notes
-
-Each build is generated using the [lddtool](https://pds.nasa.gov/tools/about/ldd/) specific to a version of the [PDS4 Information Model](https://pds.nasa.gov/datastandards/documents/im/). The build command used is:
-
-```
-lddtool -lpsnJ PDS4_DISP_IngestLDD.xml
-```
-
-# Contribute
+# Feedback
 
 Have a bug or feature request? Create one in the [PDS4 Issue Repo](https://github.com/pds-data-dictionaries/PDS4-LDD-Issue-Repo/issues/new/choose).
 
 
-# Support
+# Developer Support
 
-See the [PDS Data Dictionaries Support page](https://pds-data-dictionaries.github.io/support/) for more Support information.
+[For more information](src/README.md)
