@@ -47,7 +47,7 @@
     <Discipline_Area>
         <disp:Display_Settings>
              <Local_Internal_Reference> 
-		     <local_identifier_reference>test</local_identifier_reference>
+		     <local_identifier_reference>dmsp-test</local_identifier_reference>
 	             <local_reference_type>display_settings_to_array</local_reference_type>
 	     </Local_Internal_Reference>
              <disp:Display_Direction>
