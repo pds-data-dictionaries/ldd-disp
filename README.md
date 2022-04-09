@@ -1,41 +1,33 @@
-# Display Local Data Dictionary (LDD)
+# Display (disp) Discipline Namespace
 
-The Display dictionary contains high level classes and attributes used in imaging and spectrometer products.
-It also contains classes with attributes used during active mission operations.
+The _Display_ namespace is used to define how an array-type object with two or more 
+dimensions should be displayed on, for example, a video screen. The required 
+&lt;Display_Direction&gt; class identifies the 2D "image" plane and how it should be 
+displayed so that other classes and documentation can reliably refer to directions like 
+"up", "left", and "clockwise". The namespace also provides classes to identify color bands
+for display of a color image, and timing information to display an image cube as a movie sequence.
 
-Steward: [IMG Node](https://pds-imaging.jpl.nasa.gov/)
+Steward: Trent Hare ([thare@usgs.gov](mailto:thare@usgs.gov)), Cartography and Imaging Sciences Node 
 
-Only one LDD source version is kept such that it can be managed by github.
+# Documentation
 
-- [src](src)
-
-## Versions
-
-A Local Data Dictionary (LDD) is built for selected versions of the [PDS4 Information Model](https://pds.nasa.gov/pds4/doc/im/).
-The build process insures compatiblity of the LDD with the core information model.
-
-
-## Builds
-
-This LDD has been released for the following versions of the PDS4 information model:
-
-- [development](build/development)
-- [releases](build/release)
+* [User Guide](docs/user-guide.md) - Still in development 
+* [Detailed Documentation](https://sbnwiki.astro.umd.edu/wiki/Filling_Out_the_Display_Dictionary_Classes) - Currently in the SBN wiki pages
 
 
-## Notes
+# Latest Release
 
-Each build is generated using the [lddtool](https://pds.nasa.gov/tools/about/ldd/) specific to a version of the [PDS4 Information Model](https://pds.nasa.gov/datastandards/documents/im/). The build command used is:
+<!-- UPDATE NEEDED - Replace <PDS Namespace> with namespace name and modify the URL to have #namespace-id at the end, e.g. #disp, #geom, etc. -->
+* [pds.nasa.gov "Data Dictionaries" page](https://pds.nasa.gov/datastandards/dictionaries/#disp)
+* [GitHub Repo](../../../releases/latest)
+* [Change log](CHANGELOG.md)
 
-```
-lddtool -lpsnJ PDS4_DISP_IngestLDD.xml
-```
 
-# Contribute
+# Feedback
 
 Have a bug or feature request? Create one in the [PDS4 Issue Repo](https://github.com/pds-data-dictionaries/PDS4-LDD-Issue-Repo/issues/new/choose).
 
 
-# Support
+# Developer Support
 
-See the [PDS Data Dictionaries Support page](https://pds-data-dictionaries.github.io/support/) for more Support information.
+* [PDS Namespace Developer Documentation](https://pds-data-dictionaries.github.io/) 
