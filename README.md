@@ -19,7 +19,7 @@ Steward: Trent Hare ([thare@usgs.gov](mailto:thare@usgs.gov)), Cartography and I
 
 Just the Display namespace:
 * [Schema packages](https://github.com/pds-data-dictionaries/ldd-disp/releases/latest) 
-* [Change log](CHANGELOG.md)
+* [Change log](CHANGELOG.md) - Still in development
 
 All namespaces:
 * [pds.nasa.gov "Data Dictionaries" page](https://pds.nasa.gov/datastandards/dictionaries)
