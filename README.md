@@ -2,17 +2,17 @@
 
 The _Display_ namespace is used to define how an array-type object with two or more 
 dimensions should be displayed on, for example, a video screen. The required 
-&lt;Display_Direction&gt; class identifies the 2D "image" plane and how it should be 
+&lt;Display_Direction&gt; class identifies the 2D image plane and how it should be 
 displayed so that other classes and documentation can reliably refer to directions like 
 "up", "left", and "clockwise". The namespace also provides classes to identify color bands
-for display of a color image, and timing information to display an image cube as a movie sequence.
+for display of a color image, and timing information to display an image cube as a movie.
 
 Steward: Trent Hare ([thare@usgs.gov](mailto:thare@usgs.gov)), Cartography and Imaging Sciences Node 
 
 # Documentation
 
 * [User Guide](docs/user-guide.md) - Still in development 
-* [Detailed Documentation](https://sbnwiki.astro.umd.edu/wiki/Filling_Out_the_Display_Dictionary_Classes) - Currently in the SBN wiki pages
+* [Detailed Documentation](https://sbnwiki.astro.umd.edu/wiki/Filling_Out_the_Display_Dictionary_Classes) - Currently in the SBN wiki pages as [Filling Out the Display Dictionary Classes](https://sbnwiki.astro.umd.edu/wiki/Filling_Out_the_Display_Dictionary_Classes)
 
 
 # Latest Release
