@@ -1,12 +1,14 @@
 
 >>  INFO LDDTOOL Version: 13.1.0
->>  INFO IM Version Id: 1.17.0.0
+>>  INFO IM Version Id: 1.13.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.23
->>  INFO Date: Sun Apr 10 15:08:02 UTC 2022
+>>  INFO IM Label Version Id: 1.19
+>>  INFO Date: Sun Apr 10 15:11:11 UTC 2022
 >>  INFO PARENT_DIR: /tmp/lddtool-13.1.0
 >>  INFO SCRIPT_DIR: /tmp/lddtool-13.1.0/bin
 >>  INFO LIB_DIR: /tmp/lddtool-13.1.0/lib
+>>  WARNING Class omitted from build - Class Identifier:0001_NASA_PDS_1.pds.Schematron_Rule
+>>  WARNING Class omitted from build - Class Identifier:0001_NASA_PDS_1.pds.Schematron_Assert
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:disp
 >>> INFO Init:  - Config.Properties Namespace Id Using:disp
@@ -21,27 +23,27 @@
 >>> INFO Attribute: <frame_rate> - The default minimum value provided by the attribute's data type is being overridden with 1.0
 >>> INFO Attribute: <loop_count> - The default minimum value provided by the attribute's data type is being overridden with 1
 >>> INFO Attribute: <loop_delay> - The default minimum value provided by the attribute's data type is being overridden with 0.0
->>> WARNING Header:  - New namespace id has been specified:disp
 
  -- LDDTool Execution Summary --
-     1 warning(s)
+     2 warning(s)
      0 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1H00
+     - IM Version: 1D00
      - PDS4 Flag: true
      - LDD Flag: true
+     - IM Version: true
      - Export JSON Flag: true
 
      - Ingest LDD(s): /home/runner/work/ldd-disp/ldd-disp/src/PDS4_DISP_IngestLDD.xml
 
 Output:
 
-     - ./PDS4_DISP_1H00_1510.xsd
-     - ./PDS4_DISP_1H00_1510.sch
-     - ./PDS4_DISP_1H00_1510.xml
-     - ./PDS4_DISP_1H00_1510.JSON
+     - ./PDS4_DISP_1D00_1510.xsd
+     - ./PDS4_DISP_1D00_1510.sch
+     - ./PDS4_DISP_1D00_1510.xml
+     - ./PDS4_DISP_1D00_1510.JSON
 
 >>  INFO Exit(0)
