@@ -27,7 +27,9 @@ All namespaces:
 
 # Feedback
 
-Have a bug or feature request? Create one in the [PDS4 Issue Repo](https://github.com/pds-data-dictionaries/PDS4-LDD-Issue-Repo/issues/new/choose).
+Have a bug or feature request? [Create one in the PDS4 Issue Repo](https://github.com/pds-data-dictionaries/PDS4-LDD-Issue-Repo/issues/new?assignees=thareUSGS&labels=ldd-disp&template=-ldd-disp--ldd-update-request.md&title=%5Bldd-disp%5D+%3CShort+summary+of+bug+or+feature+request+here%3E).
+
+[Open issues on the Display namespace.](https://github.com/pds-data-dictionaries/PDS4-LDD-Issue-Repo/issues?q=is%3Aissue+is%3Aopen+label%3Aldd-disp)
 
 
 # Developer Support
