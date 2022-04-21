@@ -37,6 +37,7 @@
     - Modifications resulting from the DMSP Workshop and analysis
       . Made pds:Local_Internal_Reference required
       . Reset lower limit for frame_rate to 1.e-307
+      . Make sure the horizontal and vertical display axes are not the same
       . Make sure the name of the color display axis is different from the horizontal 
         and vertical display axes.
   </comment>
@@ -548,10 +549,15 @@
         <rule_test>//pds:*[pds:local_identifier=$local_identifier_reference]/pds:Axis_Array[pds:axis_name=$vertical_display_axis]</rule_test>
         <rule_message>The vertical display axis (&lt;sch:value-of select='$vertical_display_axis'/&gt;) in display direction must match the name of an axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
     </DD_Rule_Statement>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>not($horizontal_display_axis=$vertical_display_axis)</rule_test>
+      <rule_message>The horizontal display axis (&lt;sch:value-of select='horizontal_display_axis'/&gt;) must not match the name of the vertical axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+    </DD_Rule_Statement>
   </DD_Rule>
 
   <!--
-    This test checks that the referenced object contains the names color axis and that axis does not have the same name 
+    This test checks that the referenced object contains the named color axis and that axis does not have the same name 
     as either the horizontal or vertical axis identified in Display_Direction.
   -->
   <DD_Rule>
@@ -568,8 +574,31 @@
     </DD_Rule_Statement>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
-      <rule_test>if ($color_display_axis=($horizontal_display_axis, $vertical_display_axis)) then false() else true() </rule_test>
+      <rule_test>not($color_display_axis=($horizontal_display_axis, $vertical_display_axis))</rule_test>
       <rule_message>The color display axis (&lt;sch:value-of select='color_display_axis'/&gt;) must not match the name of the horizontal or vertical axes in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+    </DD_Rule_Statement>
+  </DD_Rule>
+  
+  <!--
+    This test checks that the referenced object contains the named time axis and that axis does not have the same name 
+    as either the horizontal or vertical axis identified in Display_Direction.
+  -->
+  <DD_Rule>
+    <local_identifier>movie_settings_validate_axis</local_identifier>
+    <rule_context>disp:Movie_Display_Settings</rule_context>
+    <rule_assign>name="horizontal_display_axis" value="../disp:Display_Direction/disp:horizontal_display_axis"</rule_assign>
+    <rule_assign>name="vertical_display_axis" value="../disp:Display_Direction/disp:vertical_display_axis"</rule_assign>
+    <rule_assign>name="time_display_axis" value="disp:time_display_axis"</rule_assign>
+    <rule_assign>name="local_identifier_reference" value="../pds:Local_Internal_Reference/pds:local_identifier_reference"</rule_assign>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>//pds:*[pds:local_identifier=$local_identifier_reference]/pds:Axis_Array[pds:axis_name=$time_display_axis]</rule_test>
+      <rule_message>The time display axis (&lt;sch:value-of select='time_display_axis'/&gt;) in movie display settings must match the name of an axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+    </DD_Rule_Statement>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>not($time_display_axis=($horizontal_display_axis, $vertical_display_axis))</rule_test>
+      <rule_message>The time display axis (&lt;sch:value-of select='time_display_axis'/&gt;) must not match the name of the horizontal or vertical axes in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
   
