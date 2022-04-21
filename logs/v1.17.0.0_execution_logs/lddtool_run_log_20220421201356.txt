@@ -1,12 +1,12 @@
 
 >>  INFO LDDTOOL Version: 10.0.0
->>  INFO IM Version Id: 1.16.0.0
+>>  INFO IM Version Id: 1.17.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.22
->>  INFO Date: Mon Apr 11 17:39:35 UTC 2022
->>  INFO PARENT_DIR: /tmp/lddtool-13.1.0
->>  INFO SCRIPT_DIR: /tmp/lddtool-13.1.0/bin
->>  INFO LIB_DIR: /tmp/lddtool-13.1.0/lib
+>>  INFO IM Label Version Id: 1.23
+>>  INFO Date: Thu Apr 21 20:13:56 UTC 2022
+>>  INFO PARENT_DIR: /tmp/lddtool-14.0.1
+>>  INFO SCRIPT_DIR: /tmp/lddtool-14.0.1/bin
+>>  INFO LIB_DIR: /tmp/lddtool-14.0.1/lib
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:disp
 >>> INFO Init:  - Config.Properties Namespace Id Using:disp
@@ -18,19 +18,18 @@
 >>> INFO Attribute: <red_channel_band> - The default minimum value provided by the attribute's data type is being overridden with 1
 >>> INFO Attribute: <green_channel_band> - The default minimum value provided by the attribute's data type is being overridden with 1
 >>> INFO Attribute: <blue_channel_band> - The default minimum value provided by the attribute's data type is being overridden with 1
->>> INFO Attribute: <frame_rate> - The default minimum value provided by the attribute's data type is being overridden with 1.0
+>>> INFO Attribute: <frame_rate> - The default minimum value provided by the attribute's data type is being overridden with 1.E-307
 >>> INFO Attribute: <loop_count> - The default minimum value provided by the attribute's data type is being overridden with 1
 >>> INFO Attribute: <loop_delay> - The default minimum value provided by the attribute's data type is being overridden with 0.0
->>> WARNING Header:  - New namespace id has been specified:disp
 
  -- LDDTool Execution Summary --
-     1 warning(s)
+     0 warning(s)
      0 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1G00
+     - IM Version: 1H00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -40,9 +39,9 @@ Input:
 
 Output:
 
-     - ./PDS4_DISP_1G00_1510.xsd
-     - ./PDS4_DISP_1G00_1510.sch
-     - ./PDS4_DISP_1G00_1510.xml
-     - ./PDS4_DISP_1G00_1510.JSON
+     - ./PDS4_DISP_1H00_1600.xsd
+     - ./PDS4_DISP_1H00_1600.sch
+     - ./PDS4_DISP_1H00_1600.xml
+     - ./PDS4_DISP_1H00_1600.JSON
 
 >>  INFO Exit(0)
