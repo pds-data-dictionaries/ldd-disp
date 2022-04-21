@@ -1,14 +1,12 @@
 
->>  INFO LDDTOOL Version: 14.0.1
->>  INFO IM Version Id: 1.13.0.0
+>>  INFO LDDTOOL Version: 10.0.0
+>>  INFO IM Version Id: 1.16.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.19
->>  INFO Date: Thu Apr 21 20:20:27 UTC 2022
+>>  INFO IM Label Version Id: 1.22
+>>  INFO Date: Thu Apr 21 21:05:57 UTC 2022
 >>  INFO PARENT_DIR: /tmp/lddtool-14.0.1
 >>  INFO SCRIPT_DIR: /tmp/lddtool-14.0.1/bin
 >>  INFO LIB_DIR: /tmp/lddtool-14.0.1/lib
->>  WARNING Class omitted from build - Class Identifier:0001_NASA_PDS_1.pds.Schematron_Rule
->>  WARNING Class omitted from build - Class Identifier:0001_NASA_PDS_1.pds.Schematron_Assert
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:disp
 >>> INFO Init:  - Config.Properties Namespace Id Using:disp
@@ -25,13 +23,13 @@
 >>> INFO Attribute: <loop_delay> - The default minimum value provided by the attribute's data type is being overridden with 0.0
 
  -- LDDTool Execution Summary --
-     2 warning(s)
+     0 warning(s)
      0 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1D00
+     - IM Version: 1G00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -41,9 +39,9 @@ Input:
 
 Output:
 
-     - ./PDS4_DISP_1D00_1600.xsd
-     - ./PDS4_DISP_1D00_1600.sch
-     - ./PDS4_DISP_1D00_1600.xml
-     - ./PDS4_DISP_1D00_1600.JSON
+     - ./PDS4_DISP_1G00_1600.xsd
+     - ./PDS4_DISP_1G00_1600.sch
+     - ./PDS4_DISP_1G00_1600.xml
+     - ./PDS4_DISP_1G00_1600.JSON
 
 >>  INFO Exit(0)
