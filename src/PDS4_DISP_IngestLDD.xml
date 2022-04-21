@@ -568,7 +568,7 @@
     </DD_Rule_Statement>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
-      <rule_test>if ($color_display_axis=($horizontal_display_axis, $vertical_display_axis) then false() else true() </rule_test>
+      <rule_test>if ($color_display_axis=($horizontal_display_axis, $vertical_display_axis)) then false() else true() </rule_test>
       <rule_message>The color display axis (&lt;sch:value-of select='color_display_axis'/&gt;) must not match the name of the horizontal or vertical axes in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
