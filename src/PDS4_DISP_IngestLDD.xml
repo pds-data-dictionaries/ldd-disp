@@ -552,7 +552,7 @@
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>not($horizontal_display_axis=$vertical_display_axis)</rule_test>
-      <rule_message>The horizontal display axis (&lt;sch:value-of select='horizontal_display_axis'/&gt;) must not match the name of the vertical axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+      <rule_message>The horizontal display axis (&lt;sch:value-of select='$horizontal_display_axis'/&gt;) must not match the name of the vertical axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
 
@@ -570,12 +570,12 @@
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>//pds:*[pds:local_identifier=$local_identifier_reference]/pds:Axis_Array[pds:axis_name=$color_display_axis]</rule_test>
-      <rule_message>The color display axis (&lt;sch:value-of select='color_display_axis'/&gt;) in color display settings must match the name of an axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+      <rule_message>The color display axis (&lt;sch:value-of select='$color_display_axis'/&gt;) in color display settings must match the name of an axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
     </DD_Rule_Statement>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>not($color_display_axis=($horizontal_display_axis, $vertical_display_axis))</rule_test>
-      <rule_message>The color display axis (&lt;sch:value-of select='color_display_axis'/&gt;) must not match the name of the horizontal or vertical axes in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+      <rule_message>The color display axis (&lt;sch:value-of select='$color_display_axis'/&gt;) must not match the name of the horizontal or vertical axes in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
   
@@ -593,12 +593,12 @@
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>//pds:*[pds:local_identifier=$local_identifier_reference]/pds:Axis_Array[pds:axis_name=$time_display_axis]</rule_test>
-      <rule_message>The time display axis (&lt;sch:value-of select='time_display_axis'/&gt;) in movie display settings must match the name of an axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+      <rule_message>The time display axis (&lt;sch:value-of select='$time_display_axis'/&gt;) in movie display settings must match the name of an axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
     </DD_Rule_Statement>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>not($time_display_axis=($horizontal_display_axis, $vertical_display_axis))</rule_test>
-      <rule_message>The time display axis (&lt;sch:value-of select='time_display_axis'/&gt;) must not match the name of the horizontal or vertical axes in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+      <rule_message>The time display axis (&lt;sch:value-of select='$time_display_axis'/&gt;) must not match the name of the horizontal or vertical axes in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
   
