@@ -15,3 +15,7 @@ indicates an array-type object.
 as the value of either *horizontal_display_axis* or *vertical_display_axis*.
 * **uniqueTime:** The value of *time_display_axis* must not be the same 
 as the value of either *horizontal_display_axis* or *vertical_display_axis*.
+* **frameRateValid:** The value of *frame_rate* must be positive.
+* **crossObjectAxis-HV:** The values of *horizontal_display_axis* 
+and *vertical_display_axis* must correspond to axes in the array 
+object identified by the associated pds:Local_Internal_Reference.
