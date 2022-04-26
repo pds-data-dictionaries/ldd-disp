@@ -1,0 +1,51 @@
+
+PDS Validate Tool Report
+
+Configuration:
+   Version                       2.2.0
+   Date                          2022-04-26T16:48:41Z
+
+Parameters:
+   Targets                       [file:/home/runner/work/ldd-disp/ldd-disp/test/test2V_FAIL.xml]
+   Rule Type                     pds4.label
+   User Specified Schemas        [file:/home/runner/work/ldd-disp/ldd-disp/build/development/54b62b2e97f5a0224a136c710424634411f0cdbe/1.14.0.0/PDS4_DISP_1E00_1600.xsd, file:/tmp/PDS4_PDS_1E00.xsd]
+   User Specified Schematrons    [file:/home/runner/work/ldd-disp/ldd-disp/build/development/54b62b2e97f5a0224a136c710424634411f0cdbe/1.14.0.0/PDS4_DISP_1E00_1600.sch, file:/tmp/PDS4_PDS_1E00.sch]
+   Severity Level                WARNING
+   Recurse Directories           true
+   File Filters Used             [*.xml, *.XML]
+   Data Content Validation       off
+   Product Level Validation      on
+   Max Errors                    100000
+   Registered Contexts File      /tmp/validate-2.2.0/resources/registered_context_products.json
+
+
+
+Product Level Validation Results
+
+  FAIL: file:/home/runner/work/ldd-disp/ldd-disp/test/test2V_FAIL.xml
+      ERROR  [error.label.schematron]   line 49, 30: The vertical display axis (line) in display direction must match the name of an axis in the referenced Array (image)
+      WARNING  [warning.label.missing_schematron_spec]   No schematron specification found in the label.
+        1 product validation(s) completed
+
+Summary:
+
+  1 error(s)
+  1 warning(s)
+
+  Product Validation Summary:
+    0          product(s) passed
+    1          product(s) failed
+    0          product(s) skipped
+
+  Referential Integrity Check Summary:
+    0          check(s) passed
+    0          check(s) failed
+    0          check(s) skipped
+
+  Message Types:
+    1            error.label.schematron
+    1            warning.label.missing_schematron_spec
+
+End of Report
+Completed execution in 4924 ms
+
