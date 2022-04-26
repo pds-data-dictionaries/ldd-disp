@@ -2,7 +2,7 @@
 
 The PDS4 Display namespace is used to define how an array-type object (image) with two or more dimensions should be displayed on, for example, computer monitor or video screen. For example, defining the vertical display direction 'Bottom to Top' or horizontal direction 'Left to Right' and it can provide guidance on mapping multi-band arrays (image cubes) for color display using red, green, and blue (RGB) channels or as an animation or movie sequence (video).
 
-Steward: [Trent Hare, thareUSGS](@thareUSGS), [thare@usgs.gov](mailto:thare@usgs.gov)), Cartography and Imaging Sciences Node
+Steward: [Trent Hare, thare@usgs.gov](mailto:thare@usgs.gov)), Cartography and Imaging Sciences Node
 
 # Documentation
 
@@ -10,7 +10,7 @@ See this namespace's online documentation at https://pds-data-dictionaries.githu
 
 # Latest Release
 
-* [&lt;PDS Namespace&gt;](https://pds.nasa.gov/datastandards/dictionaries/#disp)
+* [Display Namespace](https://pds.nasa.gov/datastandards/dictionaries/#disp)
 * [GitHub](../../../releases/latest)
 * [Change log](CHANGELOG.md)
 
