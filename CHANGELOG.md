@@ -11,7 +11,7 @@ Modifications resulting from the DMSP Workshop and analysis
   - Make sure the horizontal and vertical display axes are not the same.
   - Make sure the name of the color display axis is different from the horizontal and vertical display axes.
   - loop_count minimum value is now 0, which defines an infinite loop (it will should never stop).
-  - frame_rate minimum value is now 0.0 from 1 to allow for movies slower than 1 frame/s. Zero can be used for single frame movies. 
+  - frame_rate minimum value is now 1.e-307 from 1 to allow for movies slower than 1 frame/s.  
 
 ### Fixed
   - Made pds:Local_Internal_Reference required
