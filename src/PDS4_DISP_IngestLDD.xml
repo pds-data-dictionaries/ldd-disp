@@ -17,7 +17,8 @@
   <full_name>Trent Hare</full_name>
   <steward_id>img</steward_id>
   <namespace_id>disp</namespace_id>
-  <comment>The PDS4 Display namespace is used to define how an array-type object with two or more dimensions should be displayed on, for example, computer monitor or video screen.
+  <comment>The PDS4 Display namespace is used to define how an array-type object with 
+    two or more dimensions should be displayed on, for example, computer monitor or video screen.
   </comment>
   <last_modification_date_time>2021-10-20T14:40:00Z</last_modification_date_time>
 

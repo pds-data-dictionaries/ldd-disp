@@ -1,10 +1,10 @@
 # Display (disp) Discipline Namespace
 
 The _Display_ namespace is used to define how an array-type object with two or more 
-dimensions should be displayed on, for example, a video screen. The required 
+dimensions should be displayed on, for example, a computer monitor or video screen. The required 
 &lt;Display_Direction&gt; class identifies the 2D image plane and how it should be 
 displayed so that other classes and documentation can reliably refer to directions like 
-"up", "left", and "clockwise". The namespace also provides classes to identify color bands
+"Top to Bottom" and "Left to Right". The namespace also provides classes to identify color bands
 for display of a color image, and timing information to display an image cube as an animation or movie.
 
 Steward: Trent Hare ([thare@usgs.gov](mailto:thare@usgs.gov)), Cartography and Imaging Sciences Node 

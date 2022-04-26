@@ -1,42 +1,25 @@
-{date}  
-{author}
+# Display (disp) Discipline Namespace User’s Guide
 
-> Note to authors who use this outline: The outline is a
-> suggestion only. It includes the minimum of content needed to inform the
-> dictionary user. Authors are expected to tailor the outline to their particular
-> purposes, elaborating and providing context as needed.
-
-# Introduction
+# Contents
    1. Purpose of this User’s Guide
    1. Audience
    1. Applicable Documents
 
-# Overview of the {name} Local Data Dictionary
+# [Introductory Resources](#introductory)
 
-*What is this dictionary for? What kinds of products might
-use this dictionary? Who is the steward of this dictionary (person and node
-name)? How often is it updated? To whom should questions about it be directed?
-(Give an email address or link to a page with contact information.)*
+- [CART Detailed Guide](../docs)
+- Using Local Namespaces [SBN Wiki](https://sbnwiki.astro.umd.edu/wiki/Using_Local_Dictionaries)
+- Schema Referencing in PDS4 Labels [SBN Wiki](https://sbnwiki.astro.umd.edu/wiki/Schema_Referencing_in_PDS4_Labels)
+- Namespace Creation [Resources](https://pds-data-dictionaries.github.io/getting-started/getting-started.html)
 
-# How to Include the {name} Local Data Dictionary in a PDS4 Label
 
-*Briefly explain the form that a discipline dictionary
-takes: the input ingest file, the output schema, Schematron, and other files,
-which ones are necessary and which ones may be ignored.*
+# Overview of the Display Namespace
 
-*Give the URL at PDS where the dictionary files may be downloaded.*
-
-*Give (and explain) a label snippet showing the beginning lines of a 
-label to demonstrate the use of the dictionary schema and schematron
-in the xml prolog and the root tag (preferably Product_Observational).*
-
-*Give (and explain) a label snippet showing the location
-of the classes and attributes in the label; i.e., inside the Discipline_Area
-tag. Collapse the lower level classes if needed for brevity.*
-
-*In general, for label snippets use a fixed-width font and
-consistent indentation. Color-coding is helpful. Label snippets copied from an
-Oxygen editor window will retain their color-coding when pasted here.*
+The _Display_ namespace is used to define how an array-type object with two or more 
+dimensions should be displayed on, for example, a computer monitor or video screen. The required 
+&lt;Display_Direction&gt; class identifies the 2D image plane and how it should be 
+displayed using attributes like "Top to Bottom" and "Left to Right".
+The namespace also provides classes to identify red, blue, and green channels to display of a color image (color composite) and timing information to display an image cube as an animation or movie. Several looping attributes are optional to define looping count or looping delay time.
 
 # Organization of Classes and Attributes
 
