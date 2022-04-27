@@ -557,8 +557,10 @@
   </DD_Rule>
 
   <!--
-    This test checks that the referenced object contains the named color axis and that axis does not have the same name 
-    as either the horizontal or vertical axis identified in Display_Direction.
+    This test checks that:
+         o the referenced object contains the named color axis,
+         o the axis does not have the same name as either the horizontal or vertical axis identified in Display_Direction, and
+         o the values for the RGB channels are in range for the named color axis.
   -->
   <DD_Rule>
     <local_identifier>color_settings_validate_axis</local_identifier>
@@ -567,6 +569,7 @@
     <rule_assign>name="vertical_display_axis" value="../disp:Display_Direction/disp:vertical_display_axis"</rule_assign>
     <rule_assign>name="color_display_axis" value="disp:color_display_axis"</rule_assign>
     <rule_assign>name="local_identifier_reference" value="../pds:Local_Internal_Reference/pds:local_identifier_reference"</rule_assign>
+    <rule_assign>name="bands" value="//pds:*[pds:local_identifier=$local_identifier_reference]/pds:Axis_Array[pds:axis_name=$color_display_axis]/pds:elements"</rule_assign>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>//pds:*[pds:local_identifier=$local_identifier_reference]/pds:Axis_Array[pds:axis_name=$color_display_axis]</rule_test>
@@ -576,6 +579,21 @@
       <rule_type>Assert</rule_type>
       <rule_test>not($color_display_axis=($horizontal_display_axis, $vertical_display_axis))</rule_test>
       <rule_message>The color display axis (&lt;sch:value-of select='$color_display_axis'/&gt;) must not match the name of the horizontal or vertical axes in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+    </DD_Rule_Statement>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>not(number(disp:red_channel_band) > $bands)</rule_test>
+      <rule_message>The value of disp:red_channel_band (&lt;sch:value-of select="disp:red_channel_band"/&gt;) is out of range for the length (&lt;sch:value-of select='$bands'/&gt;) of the color display axis (&lt;sch:value-of select='$color_display_axis'/&gt;).</rule_message>
+    </DD_Rule_Statement>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>not(number(disp:green_channel_band) > $bands)</rule_test>
+      <rule_message>The value of disp:green_channel_band (&lt;sch:value-of select="disp:green_channel_band"/&gt;) is out of range for the length (&lt;sch:value-of select='$bands'/&gt;) of the color display axis (&lt;sch:value-of select='$color_display_axis'/&gt;).</rule_message>
+    </DD_Rule_Statement>
+    <DD_Rule_Statement>
+      <rule_type>Assert</rule_type>
+      <rule_test>not(number(disp:blue_channel_band) > $bands)</rule_test>
+      <rule_message>The value of disp:blue_channel_band (&lt;sch:value-of select="disp:blue_channel_band"/&gt;) is out of range for the length (&lt;sch:value-of select='$bands'/&gt;) of the color display axis (&lt;sch:value-of select='$color_display_axis'/&gt;).</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
   
