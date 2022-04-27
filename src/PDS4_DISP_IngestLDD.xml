@@ -34,14 +34,21 @@
     - Added display_settings_validate_axis rules and tests for the new rules by Jesse S.
  
     1.6.0.0
-    - Modifications resulting from the DMSP Workshop and analysis
+    - Modifications resulting from the DMSP Workshop and analysis (A.Raugh, ed.):
       . Made pds:Local_Internal_Reference required
       . Reset lower limit for frame_rate to 1.e-307
-      . Make sure the horizontal and vertical display axes are not the same
-      . Make sure the name of the color display axis is different from the horizontal 
-        and vertical display axes.
+      . Added Schematron Rules to validate:
+        o Horizontal and vertical display axes are not the same.
+        o The name of the color display axis is different from the horizontal 
+          and vertical display axes, and occurs in the referenced array.
+        o The name of the time display axis is different from the horizontal
+          and vertical display axes, and occurs in the referenced array.
+        o Frame rate is positive and non-zero.
+        o The values of the RGB channel bands are within the range of elements
+          in the color display axis.
+      . Edited Schematron output messages for consistency.    
   </comment>
-  <last_modification_date_time>2021-10-20T14:40:00Z</last_modification_date_time>
+  <last_modification_date_time>2022-04-27</last_modification_date_time>
 
   <!--  Attributes: BEGIN  -->
   
@@ -229,10 +236,10 @@
 
   <DD_Attribute>
     <name>frame_rate</name>
-    <version_id>1.0</version_id>
+    <version_id>1.1</version_id>
     <local_identifier>frame_rate</local_identifier>
     <nillable_flag>false</nillable_flag>
-    <submitter_name>Elizabeth D. Rye</submitter_name>
+    <submitter_name>Elizabeth D. Rye; A. Raugh (ed.)</submitter_name>
     <definition>The frame_rate attribute indicates the number of still
       pictures (or frames) that should be displayed per unit of time in a
       video.  Note this is NOT necessarily the same as the rate at which
@@ -334,9 +341,9 @@
   
   <DD_Class>
     <name>Display_Settings</name>
-    <version_id>1.1</version_id>
+    <version_id>1.2</version_id>
     <local_identifier>Display_Settings</local_identifier>
-    <submitter_name>Elizabeth D. Rye</submitter_name>
+    <submitter_name>Elizabeth D. Rye; A. Raugh (ed.)</submitter_name>
     <definition>The Display_Settings class contains one or more classes
       describing how data should be displayed on a display device.</definition>
     <abstract_flag>false</abstract_flag>
@@ -510,10 +517,6 @@
   
   <!-- Schematron Rule definitions: BEGIN                              -->
 
-  <!-- This rule is also being introduced from somewhere else, 
-       maybe from PDS IM (?) during LDDtool build. For now this rule
-       will be repeated as this is required to pass LDDtool build.
-  -->
   <DD_Rule>
     <local_identifier>Display_Settings_0</local_identifier>
     <rule_context>disp:Display_Settings/pds:Local_Internal_Reference</rule_context>
@@ -521,14 +524,14 @@
         <rule_type>Assert</rule_type>
         <rule_test>pds:local_identifier_reference = //pds:*/pds:*/(pds:Array|pds:Array_2D|pds:Array_2D_Image|pds:Array_2D_Map|pds:Array_2D_Spectrum|pds:Array_3D|pds:Array_3D_Image|pds:Array_3D_Movie|pds:Array_3D_Spectrum)/pds:local_identifier
         </rule_test>
-        <rule_message>Display Dictionary: In the pds:Local_Internal_Reference class, the value of the pds:local_identifier_reference must match the value of the pds:local_identifer of an Array class or sub-class within the File_Area.
+        <rule_message>In disp:Display_Settings, the value of the pds:local_identifier_reference (&lt;sch:value-of select='$pds:local_identifier_reference'/&gt;) must match the value of the pds:local_identifer of an Array class or sub-class within the File_Area.
         </rule_message>
     </DD_Rule_Statement>
     <DD_Rule_Statement>
         <rule_type>Assert</rule_type>
         <rule_test>pds:local_reference_type = 'display_settings_to_array'
         </rule_test>
-        <rule_message>Display_Dictionary: For Local_Internal_Reference in disp:Display_Settings, local_reference_type must equal 'display_settings_to_array'.
+        <rule_message>In disp:Display_Settings, the value of pds:local_reference_type (&lt;sch:value-of select='$pds:local_reference_type'/&gt;) must equal 'display_settings_to_array'.
         </rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
@@ -542,17 +545,17 @@
     <DD_Rule_Statement>
         <rule_type>Assert</rule_type>
         <rule_test>//pds:*[pds:local_identifier=$local_identifier_reference]/pds:Axis_Array[pds:axis_name=$horizontal_display_axis]</rule_test>
-        <rule_message>The horizontal display axis (&lt;sch:value-of select='$horizontal_display_axis'/&gt;) in display direction must match the name of an axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+        <rule_message>In Display_Direction, the horizontal_display_axis (&lt;sch:value-of select='$horizontal_display_axis'/&gt;) must match the name of an axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
     </DD_Rule_Statement>
     <DD_Rule_Statement>
         <rule_type>Assert</rule_type>
         <rule_test>//pds:*[pds:local_identifier=$local_identifier_reference]/pds:Axis_Array[pds:axis_name=$vertical_display_axis]</rule_test>
-        <rule_message>The vertical display axis (&lt;sch:value-of select='$vertical_display_axis'/&gt;) in display direction must match the name of an axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+      <rule_message>In Display_Direction, the vertical_display_axis (&lt;sch:value-of select='$vertical_display_axis'/&gt;) must match the name of an axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
     </DD_Rule_Statement>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>not($horizontal_display_axis=$vertical_display_axis)</rule_test>
-      <rule_message>The horizontal display axis (&lt;sch:value-of select='$horizontal_display_axis'/&gt;) must not match the name of the vertical axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+      <rule_message>In Display_Direction, the horizontal_display_axis (&lt;sch:value-of select='$horizontal_display_axis'/&gt;) must not match the name of the vertical_display_axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
 
@@ -573,27 +576,27 @@
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>//pds:*[pds:local_identifier=$local_identifier_reference]/pds:Axis_Array[pds:axis_name=$color_display_axis]</rule_test>
-      <rule_message>The color display axis (&lt;sch:value-of select='$color_display_axis'/&gt;) in color display settings must match the name of an axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+      <rule_message>In Color_Display_Settings, the color_display_axis (&lt;sch:value-of select='$color_display_axis'/&gt;) must match the name of an axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
     </DD_Rule_Statement>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>not($color_display_axis=($horizontal_display_axis, $vertical_display_axis))</rule_test>
-      <rule_message>The color display axis (&lt;sch:value-of select='$color_display_axis'/&gt;) must not match the name of the horizontal or vertical axes in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+      <rule_message>In Color_Display_Settings, the color_display_axis (&lt;sch:value-of select='$color_display_axis'/&gt;) must not match the name of horizontal_display_axis or vertical_display_axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
     </DD_Rule_Statement>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>not(number(disp:red_channel_band) > $bands)</rule_test>
-      <rule_message>The value of disp:red_channel_band (&lt;sch:value-of select="disp:red_channel_band"/&gt;) is out of range for the length (&lt;sch:value-of select='$bands'/&gt;) of the color display axis (&lt;sch:value-of select='$color_display_axis'/&gt;).</rule_message>
+      <rule_message>In Color_Display_Settings, the value of red_channel_band (&lt;sch:value-of select="disp:red_channel_band"/&gt;) is out of range for the length (&lt;sch:value-of select='$bands'/&gt;) of the color_display_axis (&lt;sch:value-of select='$color_display_axis'/&gt;).</rule_message>
     </DD_Rule_Statement>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>not(number(disp:green_channel_band) > $bands)</rule_test>
-      <rule_message>The value of disp:green_channel_band (&lt;sch:value-of select="disp:green_channel_band"/&gt;) is out of range for the length (&lt;sch:value-of select='$bands'/&gt;) of the color display axis (&lt;sch:value-of select='$color_display_axis'/&gt;).</rule_message>
+      <rule_message>In Color_Display_Settings, the value of green_channel_band (&lt;sch:value-of select="disp:green_channel_band"/&gt;) is out of range for the length (&lt;sch:value-of select='$bands'/&gt;) of the color_display_axis (&lt;sch:value-of select='$color_display_axis'/&gt;).</rule_message>
     </DD_Rule_Statement>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>not(number(disp:blue_channel_band) > $bands)</rule_test>
-      <rule_message>The value of disp:blue_channel_band (&lt;sch:value-of select="disp:blue_channel_band"/&gt;) is out of range for the length (&lt;sch:value-of select='$bands'/&gt;) of the color display axis (&lt;sch:value-of select='$color_display_axis'/&gt;).</rule_message>
+      <rule_message>In Color_Display_Settings, the value of blue_channel_band (&lt;sch:value-of select="disp:blue_channel_band"/&gt;) is out of range for the length (&lt;sch:value-of select='$bands'/&gt;) of the color_display_axis (&lt;sch:value-of select='$color_display_axis'/&gt;).</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
   
@@ -611,12 +614,12 @@
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>//pds:*[pds:local_identifier=$local_identifier_reference]/pds:Axis_Array[pds:axis_name=$time_display_axis]</rule_test>
-      <rule_message>The time display axis (&lt;sch:value-of select='$time_display_axis'/&gt;) in movie display settings must match the name of an axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+      <rule_message>In Movie_Display_Settings, the time_display_axis (&lt;sch:value-of select='$time_display_axis'/&gt;) must match the name of an axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
     </DD_Rule_Statement>
     <DD_Rule_Statement>
       <rule_type>Assert</rule_type>
       <rule_test>not($time_display_axis=($horizontal_display_axis, $vertical_display_axis))</rule_test>
-      <rule_message>The time display axis (&lt;sch:value-of select='$time_display_axis'/&gt;) must not match the name of the horizontal or vertical axes in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
+      <rule_message>In Movie_Display_Settings, the time_display_axis (&lt;sch:value-of select='$time_display_axis'/&gt;) must not match the name of the horizontal_display_axis or vertical_display_axis in the referenced Array (&lt;sch:value-of select='$local_identifier_reference'/&gt;)</rule_message>
     </DD_Rule_Statement>
   </DD_Rule>
   
