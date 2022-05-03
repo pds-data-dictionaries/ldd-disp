@@ -3,7 +3,7 @@
 >>  INFO IM Version Id: 1.17.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.23
->>  INFO Date: Tue Apr 26 16:48:07 UTC 2022
+>>  INFO Date: Tue May 03 23:34:43 UTC 2022
 >>  INFO PARENT_DIR: /tmp/lddtool-14.0.1
 >>  INFO SCRIPT_DIR: /tmp/lddtool-14.0.1/bin
 >>  INFO LIB_DIR: /tmp/lddtool-14.0.1/lib
@@ -18,7 +18,7 @@
 >>> INFO Attribute: <red_channel_band> - The default minimum value provided by the attribute's data type is being overridden with 1
 >>> INFO Attribute: <green_channel_band> - The default minimum value provided by the attribute's data type is being overridden with 1
 >>> INFO Attribute: <blue_channel_band> - The default minimum value provided by the attribute's data type is being overridden with 1
->>> INFO Attribute: <frame_rate> - The default minimum value provided by the attribute's data type is being overridden with 1.e-307
+>>> INFO Attribute: <frame_rate> - The default minimum value provided by the attribute's data type is being overridden with 1.E-307
 >>> INFO Attribute: <loop_count> - The default minimum value provided by the attribute's data type is being overridden with 0
 >>> INFO Attribute: <loop_delay> - The default minimum value provided by the attribute's data type is being overridden with 0.0
 
