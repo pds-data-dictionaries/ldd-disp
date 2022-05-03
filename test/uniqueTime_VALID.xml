@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<?xml-model href="../src/PDS4_DISP_1H00_1600.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<!-- NOTE: DO NOT INCLUDE SPECIFIC SCHEMATRONS IN LABEL. THEY WILL BE ADDED VIA PIPELINE -->
+<!-- 
+     SUCCESS: The time_display_axis value must not be the same as either the horizontal_display_axis or the vertical_display_axis.
+-->
 
 <Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:example="http://pds.nasa.gov/pds4/example/v1" xmlns:disp="http://pds.nasa.gov/pds4/disp/v1" 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1H00.xsd  
-	                    http://pds.nasa.gov/pds4/disp/v1   ../src/PDS4_DISP_1H00_1600.xsd">
-
-  <!-- NOTE: DO NOT INCLUDE SPECIFIC SCHEMALOCATIONS IN LABEL. THEY WILL BE ADDED VIA PIPELINE -->
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <Identification_Area>
     <logical_identifier>urn:nasa:pds:bundle:collection:product</logical_identifier>
     <version_id>1.0</version_id>
     <title>My First Product</title>
-    <information_model_version>1.17.0.0</information_model_version>
+    <information_model_version>[IM_VERSION]</information_model_version>
     <product_class>Product_Observational</product_class>
   </Identification_Area>
   
@@ -106,74 +102,7 @@
         <invalid_constant>0.0</invalid_constant>
       </Special_Constants>
     </Array_3D_Image>
-    
-    <Array_2D_Spectrum>
-      <local_identifier>Spectrum</local_identifier>
-      <offset unit="byte">0</offset>
-      <axes>2</axes>
-      <axis_index_order>Last Index Fastest</axis_index_order>
-      <Element_Array>
-        <data_type>SignedMSB4</data_type>
-      </Element_Array>
-      <Axis_Array>
-        <axis_name>SlitPosition</axis_name>
-        <elements>1</elements>
-        <sequence_number>1</sequence_number>
-      </Axis_Array>
-      <Axis_Array>
-        <axis_name>Intensity</axis_name>
-        <elements>1</elements>
-        <sequence_number>2</sequence_number>
-      </Axis_Array>
-    </Array_2D_Spectrum>
-    
-    <Array_3D_Image>
-      <local_identifier>Image3D-2</local_identifier>
-      <offset unit="byte">11264</offset>
-      <axes>3</axes>
-      <axis_index_order>Last Index Fastest</axis_index_order>
-      <Element_Array>
-        <data_type>UnsignedByte</data_type>
-        <scaling_factor>1.0</scaling_factor>
-        <value_offset>0.0</value_offset>
-      </Element_Array>
-      <Axis_Array>
-        <axis_name>Color</axis_name>
-        <elements>3</elements>
-        <sequence_number>1</sequence_number>
-      </Axis_Array>
-      <Axis_Array>
-        <axis_name>Vert</axis_name>
-        <elements>1024</elements>
-        <sequence_number>2</sequence_number>
-      </Axis_Array>
-      <Axis_Array>
-        <axis_name>Horiz</axis_name>
-        <elements>1024</elements>
-        <sequence_number>3</sequence_number>
-      </Axis_Array>
-      <Special_Constants>
-        <missing_constant>0.0</missing_constant>
-        <invalid_constant>0.0</invalid_constant>
-      </Special_Constants>
-    </Array_3D_Image>
-    
-    <Table_Character>
-      <local_identifier>Table</local_identifier>
-      <offset unit="byte">0</offset>
-      <records>1</records>
-      <record_delimiter>Carriage-Return Line-Feed</record_delimiter>
-      <Record_Character>
-        <fields>1</fields>
-        <groups>0</groups>
-        <record_length unit="byte">1</record_length>
-        <Field_Character>
-          <name>fieldname</name>
-          <field_location unit="byte">1</field_location>
-          <data_type>ASCII_Integer</data_type>
-          <field_length unit="byte">1</field_length>
-        </Field_Character>
-      </Record_Character>
-    </Table_Character>
+
   </File_Area_Observational>
+
 </Product_Observational>
