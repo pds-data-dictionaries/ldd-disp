@@ -26,13 +26,13 @@ PDS Validate Tool Report
 
 Configuration:
    Version                       2.2.0
-   Date                          2022-05-04T17:17:10Z
+   Date                          2022-05-04T17:26:16Z
 
 Parameters:
-   Targets                       [file:/home/runner/work/ldd-disp/ldd-disp/build/development/4dc7a23ab827eca08dca8b065e0ce59f14bd4d3e/1.14.0.0/PDS4_DISP_1E00_1600.xml]
+   Targets                       [file:/home/runner/work/ldd-disp/ldd-disp/build/development/bbfa3ff9b8c00e636ca16dcd0952b9fe9aeaa58f/1.14.0.0/PDS4_DISP_1E00_1600.xml]
    Rule Type                     pds4.label
-   User Specified Schemas        [file:/home/runner/work/ldd-disp/ldd-disp/build/development/4dc7a23ab827eca08dca8b065e0ce59f14bd4d3e/1.14.0.0/PDS4_DISP_1E00_1600.xsd, file:/tmp/PDS4_PDS_1E00.xsd]
-   User Specified Schematrons    [file:/home/runner/work/ldd-disp/ldd-disp/build/development/4dc7a23ab827eca08dca8b065e0ce59f14bd4d3e/1.14.0.0/PDS4_DISP_1E00_1600.sch, file:/tmp/PDS4_PDS_1E00.sch]
+   User Specified Schemas        [file:/home/runner/work/ldd-disp/ldd-disp/build/development/bbfa3ff9b8c00e636ca16dcd0952b9fe9aeaa58f/1.14.0.0/PDS4_DISP_1E00_1600.xsd, file:/tmp/PDS4_PDS_1E00.xsd]
+   User Specified Schematrons    [file:/home/runner/work/ldd-disp/ldd-disp/build/development/bbfa3ff9b8c00e636ca16dcd0952b9fe9aeaa58f/1.14.0.0/PDS4_DISP_1E00_1600.sch, file:/tmp/PDS4_PDS_1E00.sch]
    Severity Level                WARNING
    Recurse Directories           true
    File Filters Used             [*.xml, *.XML]
@@ -45,7 +45,7 @@ Parameters:
 
 Product Level Validation Results
 
-  FAIL: file:/home/runner/work/ldd-disp/ldd-disp/build/development/4dc7a23ab827eca08dca8b065e0ce59f14bd4d3e/1.14.0.0/PDS4_DISP_1E00_1600.xml
+  FAIL: file:/home/runner/work/ldd-disp/ldd-disp/build/development/bbfa3ff9b8c00e636ca16dcd0952b9fe9aeaa58f/1.14.0.0/PDS4_DISP_1E00_1600.xml
       ERROR  [error.validation.internal_error]   Error executing validationTask: java.lang.NullPointerException
         1 product validation(s) completed
 
@@ -68,5 +68,5 @@ Summary:
     1            error.validation.internal_error
 
 End of Report
-Completed execution in 4474 ms
+Completed execution in 4996 ms
 
