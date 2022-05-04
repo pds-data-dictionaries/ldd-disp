@@ -21,8 +21,34 @@
     two or more dimensions should be displayed on, for example, computer monitor or video screen.
     
     for changes please see the CHANGELOG.md on GitHub
+    https://github.com/pds-data-dictionaries/ldd-disp
+    
+              samples    
+ l      -----------------  band 1
+ i     / ************** / 
+ n    / ************** / --  band 2
+ e   / ************** / ~ /   
+ s  / ************** / ~ / --  band 3 
+   / ************** / ~ / # /
+  ------------------ ~ / # /
+     / ~~~~~~~~~~~~~~ / # /
+    / ~~~~~~~~~~~~~~ / # /
+   ------------------ # /
+      / ############## /  
+     / ############## /    
+    ------------------   
+     
+    Figure showing the layout of a typical band sequential image. Often there may only be
+    one band in an image or many more than 3 bands. For most images, a band 
+    defines a single wavelength or range of wavelengths (of energy) as measured
+    by an instrument or sensor. But a band can also hold the phase or emission
+    angle for each pixel in the image or topopgraphic elevation.
+    
+    Setting band 1, 2, and 3 respectively to the red, blue, and 
+    green (RGB) channels of a display will result in a color composite image.
+    
   </comment>
-  <last_modification_date_time>2022-05-02</last_modification_date_time>
+  <last_modification_date_time>2022-05-04</last_modification_date_time>
 
   <!--  Attributes: BEGIN  -->
   
@@ -146,9 +172,7 @@
       attribute in an Axis_Array class of the associated Array. For many uses, 
       the band axis will be defined here and will ultimately load three
       seperate bands into the red, green, and blue channels of the display
-      device (also known as a color composite). For most images, a band 
-      defines a single or a range of wavelengths (of energy), as measured by 
-      an instrument or sensor.
+      device (also known as a color composite).
     </definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>

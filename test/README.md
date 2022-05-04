@@ -28,3 +28,7 @@ array-type object.
 as the value of either *horizontal_display_axis* or *vertical_display_axis*.
 * **uniqueTime:** The value of *time_display_axis* must not be the same 
 as the value of either *horizontal_display_axis* or *vertical_display_axis*.
+* **verticalDisplay_bad_NameAxis:** The *vertical_display_axis* value must
+match an *axis_name* value
+* **hrzDisplay_bad_NameAxis:** The *horizontal_display_axis* value must
+match an *axis_name* value
