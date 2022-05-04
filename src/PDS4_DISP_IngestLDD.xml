@@ -17,36 +17,39 @@
   <full_name>Trent Hare</full_name>
   <steward_id>img</steward_id>
   <namespace_id>disp</namespace_id>
-  <comment>The PDS4 Display namespace is used to define how an array-type object with 
-    two or more dimensions should be displayed on, for example, computer monitor or video screen.
+  <comment>The PDS4 Display namespace is used to define how an array-type 
+    object with two or more dimensions should be displayed on, for example, 
+    computer monitor or video screen.
     
-    for changes please see the CHANGELOG.md on GitHub
-    https://github.com/pds-data-dictionaries/ldd-disp
-    
-              samples    
- l      -----------------  band 1
- i     / ************** / 
- n    / ************** / --  band 2
- e   / ************** / ~ /   
- s  / ************** / ~ / --  band 3 
-   / ************** / ~ / # /
-  ------------------ ~ / # /
-     / ~~~~~~~~~~~~~~ / # /
-    / ~~~~~~~~~~~~~~ / # /
-   ------------------ # /
-      / ############## /  
-     / ############## /    
-    ------------------   
+                 samples    
+    l      -----------------  band 1
+    i     / ************** / 
+    n    / ************** / --  band 2
+    e   / ************** / ~ /   
+    s  / ************** / ~ / --  band 3 
+      / ************** / ~ / # /
+     ------------------ ~ / # /
+        / ~~~~~~~~~~~~~~ / # /
+       / ~~~~~~~~~~~~~~ / # /
+      ------------------ # /
+         / ############## /  
+        / ############## /    
+       ------------------   
      
-    Figure showing the layout of a typical band sequential image. Often there may only be
-    one band in an image or many more than 3 bands. For most images, a band 
-    defines a single wavelength or range of wavelengths (of energy) as measured
-    by an instrument or sensor. But a band can also hold the phase or emission
-    angle for each pixel in the image or topopgraphic elevation.
-    
-    Setting band 1, 2, and 3 respectively to the red, blue, and 
+    Figure showing the layout of a typical band sequential image. Often
+    there may only be one band in an image or many more than 3 bands.
+    For many images, a band defines a single wavelength or range of 
+    wavelengths (of energy) as measured by an instrument or sensor. But a
+    band can also hold a wide variety of measurements or caluclated derived
+    values, for example, the phase or emission angle for each pixel in the 
+    image or each pixel can represent a topopgraphic elevation (also called 
+    digital elevation model, DEM or DTM). Setting band 1, 2, and 3
+    respectively (or really any mixture of bands) to the red, blue, and 
     green (RGB) channels of a display will result in a color composite image.
-    
+
+
+    for changes in this file, please see the CHANGELOG.md on GitHub
+    https://github.com/pds-data-dictionaries/ldd-disp
   </comment>
   <last_modification_date_time>2022-05-04</last_modification_date_time>
 
