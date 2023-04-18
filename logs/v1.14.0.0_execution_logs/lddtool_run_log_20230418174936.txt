@@ -1,12 +1,14 @@
 
->>  INFO LDDTOOL Version: 14.1.2
->>  INFO IM Version Id: 1.15.0.0
+>>  INFO LDDTOOL Version: 14.1.3
+>>  INFO IM Version Id: 1.14.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.21
->>  INFO Date: Thu Oct 20 21:50:05 UTC 2022
->>  INFO PARENT_DIR: /tmp/lddtool-14.1.2
->>  INFO SCRIPT_DIR: /tmp/lddtool-14.1.2/bin
->>  INFO LIB_DIR: /tmp/lddtool-14.1.2/lib
+>>  INFO IM Label Version Id: 1.20
+>>  INFO Date: Tue Apr 18 17:49:36 UTC 2023
+>>  INFO PARENT_DIR: /tmp/lddtool-14.1.3
+>>  INFO SCRIPT_DIR: /tmp/lddtool-14.1.3/bin
+>>  INFO LIB_DIR: /tmp/lddtool-14.1.3/lib
+>>  WARNING Class omitted from build - Class Identifier:0001_NASA_PDS_1.pds.Schematron_Rule
+>>  WARNING Class omitted from build - Class Identifier:0001_NASA_PDS_1.pds.Schematron_Assert
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:disp
 >>> INFO Init:  - Config.Properties Namespace Id Using:disp
@@ -24,13 +26,13 @@
 >>> WARNING Found duplicate attribute - lAttr.identifier:disp:Display_Settings/pds:Local_Internal_Reference
 
  -- LDDTool Execution Summary --
-     1 warning(s)
+     3 warning(s)
      0 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1F00
+     - IM Version: 1E00
      - PDS4 Flag: true
      - LDD Flag: true
      - IM Version: true
@@ -40,9 +42,9 @@ Input:
 
 Output:
 
-     - ./PDS4_DISP_1F00_1510.xsd
-     - ./PDS4_DISP_1F00_1510.sch
-     - ./PDS4_DISP_1F00_1510.xml
-     - ./PDS4_DISP_1F00_1510.JSON
+     - ./PDS4_DISP_1E00_1510.xsd
+     - ./PDS4_DISP_1E00_1510.sch
+     - ./PDS4_DISP_1E00_1510.xml
+     - ./PDS4_DISP_1E00_1510.JSON
 
 >>  INFO Exit(0)
