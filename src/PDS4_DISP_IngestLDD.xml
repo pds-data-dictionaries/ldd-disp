@@ -12,7 +12,7 @@
                         http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd ">
 
   <name>Display</name>
-  <ldd_version_id>1.5.1.0</ldd_version_id>
+  <ldd_version_id>1.5.2.0</ldd_version_id>
   <dictionary_type>Discipline</dictionary_type>
   <full_name>Trent Hare</full_name>
   <steward_id>img</steward_id>
@@ -32,9 +32,13 @@
       
     1.5.1.0 
     - Added display_settings_validate_axis rules and tests for the new rules by Jesse S.
-  
+
+    1.5.2.0 
+    - Remove to non-sensical schema rules as found by Ron J. which sets:
+      pds:Local_Internal_Reference" minOccurs="0" maxOccurs="0"
+
   </comment>
-  <last_modification_date_time>2021-10-20T14:40:00Z</last_modification_date_time>
+  <last_modification_date_time>2024-05-07T11:20:00Z</last_modification_date_time>
 
   <!--  Attributes: BEGIN  -->
   
@@ -502,31 +506,6 @@
   <!--   Classes: END    -->
   
   <!-- Schematron Rule definitions: BEGIN                              -->
-
-  <!-- This rule is also being introduced from somewhere else, 
-       maybe from PDS IM (?) during LDDtool build. For now this rule
-       will be repeated as this is required to pass LDDtool build.
-  -->
-  <DD_Rule>
-    <local_identifier>Display_Settings_0</local_identifier>
-    <rule_context>disp:Display_Settings/pds:Local_Internal_Reference</rule_context>
-    <DD_Rule_Statement>
-        <rule_type>Assert</rule_type>
-        <rule_test>pds:local_identifier_reference = //pds:*/pds:*/(pds:Array|pds:Array_2D|pds:Array_2D_Image|pds:Array_2D_Map|pds:Array_2D_Spectrum|pds:Array_3D|pds:Array_3D_Image|pds:Array_3D_Movie|pds:Array_3D_Spectrum)/pds:local_identifier
-        </rule_test>
-        <rule_message>Display Dictionary: In the pds:Local_Internal_Reference class, the value of the pds:local_identifier_reference must match the value of the pds:local_identifer of an Array class or sub-class within the File_Area.
-        </rule_message>
-    </DD_Rule_Statement>
-    <DD_Rule_Statement>
-        <rule_type>Assert</rule_type>
-        <rule_test>pds:local_reference_type = 'display_settings_to_array'
-        </rule_test>
-        <rule_message>Display_Dictionary: For Local_Internal_Reference in disp:Display_Settings, local_reference_type must equal 'display_settings_to_array'.
-        </rule_message>
-    </DD_Rule_Statement>
-  </DD_Rule>
-
-
 
 
   <DD_Rule>
