@@ -2,11 +2,12 @@
 All notable changes to this project will be documented in this file.
 
 ## [1.6.0.0]
-Modifications resulting from the DMSP Workshop and analysis
+Modifications from Anne R. resulting from the DMSP Workshop and analysis
 
 ### Added
   - New templates and github actions for publishing to docs github.io
-
+  - Update documentation T. Hare
+  - 
 ### Changed
   - Make sure the horizontal and vertical display axes are not the same.
   - Make sure the name of the color display axis is different from the horizontal and vertical display axes.
@@ -15,7 +16,7 @@ Modifications resulting from the DMSP Workshop and analysis
   - several rules and added new rules
 
 ### Fixed
-  - Made pds:Local_Internal_Reference required
+  - Made pds:Local_Internal_Reference required, allows for many
 
 ## [1.5.1.0]
 

@@ -51,7 +51,7 @@
     for changes in this file, please see the CHANGELOG.md on GitHub
     https://github.com/pds-data-dictionaries/ldd-disp
   </comment>
-  <last_modification_date_time>2022-05-04</last_modification_date_time>
+  <last_modification_date_time>2024-05-07</last_modification_date_time>
 
   <!--  Attributes: BEGIN  -->
   
@@ -382,7 +382,7 @@
       <identifier_reference>pds.Local_Internal_Reference</identifier_reference>
       <reference_type>component_of</reference_type>
       <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>Display_Direction</identifier_reference>
