@@ -1,1 +1,1 @@
-Short abstract for the namespace should go here
+The PDS4 Display namespace is used to define how an array-type object (image) with two or more dimensions should be displayed on, for example, computer monitor or video screen. For example, defining the vertical display direction 'Bottom to Top' or horizontal direction 'Left to Right' and it can provide guidance on mapping multi-band arrays (image cubes) for color display using red, green, and blue (RGB) channels or as an animation or movie sequence (video).

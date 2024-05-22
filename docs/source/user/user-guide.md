@@ -1,95 +1,137 @@
-{date}  
-{author}
-
-> Note to authors who use this outline: The outline is a
-> suggestion only. It includes the minimum of content needed to inform the
-> dictionary user. Authors are expected to tailor the outline to their particular
-> purposes, elaborating and providing context as needed.
+# Display (disp) Discipline Namespace User’s Guide
+May 7, 2024
+Trent Hare
 
 # Introduction
-   1. Purpose of this User’s Guide
-   1. Audience
-   1. Applicable Documents
+   1. Overview of the Display Discipline Namespace
+   1. Organization of Classes and Attributes
+   1. Examples
 
-# Overview of the {name} Local Data Dictionary
+# Overview of the Display Discipline Namespace
 
-*What is this dictionary for? What kinds of products might
-use this dictionary? Who is the steward of this dictionary (person and node
-name)? How often is it updated? To whom should questions about it be directed?
-(Give an email address or link to a page with contact information.)*
-
-# How to Include the {name} Local Data Dictionary in a PDS4 Label
-
-*Briefly explain the form that a discipline dictionary
-takes: the input ingest file, the output schema, Schematron, and other files,
-which ones are necessary and which ones may be ignored.*
-
-*Give the URL at PDS where the dictionary files may be downloaded.*
-
-*Give (and explain) a label snippet showing the beginning lines of a 
-label to demonstrate the use of the dictionary schema and schematron
-in the xml prolog and the root tag (preferably Product_Observational).*
-
-*Give (and explain) a label snippet showing the location
-of the classes and attributes in the label; i.e., inside the Discipline_Area
-tag. Collapse the lower level classes if needed for brevity.*
-
-*In general, for label snippets use a fixed-width font and
-consistent indentation. Color-coding is helpful. Label snippets copied from an
-Oxygen editor window will retain their color-coding when pasted here.*
+The _Display_ namespace is used to define how an array-type object with two or more dimensions should be displayed on, for example, a computer monitor or video screen.
 
 # Organization of Classes and Attributes
+The overall design for the DISPLAY dictionary is small and relatively straight forward. There a 5 classes and a little over a dozen attributes. The top level class \<disp:Display_Settings\> requires at least one Local_Internal_Reference \<pds:Local_Internal_reference\> and one \<disp:Display_Direction\> class. \<pds:Local_Internal_reference\> can be used multiple times if the label contains several "Array_*" sections which have the same defined directions.
 
-*Give a schematic diagram or a list showing the hierarchy of
-classes in order of appearance in label. Refer the reader to the Definitions
-section for complete definitions. An example of such a list is given on the
-page [Filling Out The Spectral Dictionary Classes](http://sbndev.astro.umd.edu/wiki/Filling_Out_the_Spectral_Dictionary_Classes#.3CCircular_FOV.3E)
-on the PDS Small Bodies Node wiki. In this example the names of classes and attributes have hyperlinks to
-their definitions further down the page, a useful lookup tool.*
+![Display top level UML](../_static/images/user-guide-figure1.png)
+>_Figure 1. shows the top level \<disp:Display_Settings> which requires at least one Local_Internal_Reference \<pds:Local_Internal_reference> and one \<disp:Display_Direction\>. The last two classes shown are optional._ 
 
-*The author should take into consideration the complexity
-of the dictionary when organizing this section.  If the hierarchy is large or
-complicated, it may be helpful to break it down by class as shown in the
-following subsections, but don’t forget to provide a high-level view of how the
-classes relate to one another.*
+## Display_Direction Class
 
-## Class 1
+The \<disp:Display_Direction\> class identifies the 2D image plane and how it should be displayed using attributes like "Top to Bottom" and "Left to Right". 
 
-*What is this class for?*
+![Display sub classes UML](../_static/images/user-guide-figure2.png)
+>_Figure 2. shows the mandatory \<disp:Display_Direction\> and the 4 mandatory attributes with the class._ 
 
-*Give a schematic diagram or a list of the attributes in this class in order of 
-appearance in label. Refer reader to Definitions section for complete definitions.*
+## Color_Display_Settings
 
-*Give label snippets showing use of the class and attributes, with annotations 
-as appropriate. Refer reader to Examples section for complete examples.*
+The first optional class \<disp:Color_Display_Settings\> is used to identify red, blue, and green channels to display a color composite.
 
-*Explain why some things are required and others are optional.*
+## Color_Movie_Settings
 
-*List and explain any rules that apply to this class (e.g. from Schematron).*
-
-## Class 2
-
-[repeat this subsection for each class]
-
-# Definitions
-
-*Give an alphabetical list of all classes and attributes
-with complete definitions. (Useful ones, not silly ones like "The
-map_projection_name attribute provides the name of the map projection.")*
-
-*Include:*
-
-- *Class or attribute name (indicate which it is; capitalize class names according to PDS4 standard)*
-- *PDS4 data type (ASCII_Short_String_Collapsed, ASCII_Real, ASCII_Date, etc.)*
-- *Definition in complete sentences*
-- *Cardinality (minimum and maximum number of values permitted)*
-- *Nillable, yes or no? Explain when it is appropriate to use a nil value*
-- *Minimum and maximum numeric values, if applicable*
-- *Minimum and maximum number of characters, if applicable*
-- *List of valid values, if applicable.*
+The second optional class \<disp:Movie_Display_Settings\> is used to identify any timing information to display an image cube as an animation or movie. Several looping attributes are optional to define looping count or looping delay time.
 
 # Examples
 
-*Give one or more examples of label snippets for real products, annotated as appropriate. 
-Make sure the examples can be successfully validated using the latest version of the PDS4 
-core dictionary and, of course, the dictionary described in this document.*
+## Color Image Example
+
+```
+...
+      <disp:Display_Settings>
+        <Local_Internal_Reference>
+          <local_identifier_reference>colorarray</local_identifier_reference>
+          <local_reference_type>display_settings_to_array</local_reference_type>
+        </Local_Internal_Reference>
+        <disp:Display_Direction>
+          <disp:horizontal_display_axis>Line</disp:horizontal_display_axis>
+          <disp:horizontal_display_direction>Left to Right</disp:horizontal_display_direction>
+          <disp:vertical_display_axis>Sample</disp:vertical_display_axis>
+          <disp:vertical_display_direction>Top to Bottom</disp:vertical_display_direction>
+        </disp:Display_Direction>
+        <disp:Color_Display_Settings>
+          <disp:color_display_axis>Band</disp:color_display_axis>
+          <disp:red_channel_band>1</disp:red_channel_band>
+          <disp:green_channel_band>2</disp:green_channel_band>
+          <disp:blue_channel_band>3</disp:blue_channel_band>
+        </disp:Color_Display_Settings>
+      </disp:Display_Settings>
+...
+```
+
+## Minimal Image Example with Array
+
+```
+  </Observation_Area>
+...
+    <Discipline_Area>
+      <disp:Display_Settings>
+        <Local_Internal_Reference>
+          <local_identifier_reference>array2d</local_identifier_reference>
+          <local_reference_type>display_settings_to_array</local_reference_type>
+        </Local_Internal_Reference>
+        <disp:Display_Direction>
+          <disp:horizontal_display_axis>Line</disp:horizontal_display_axis>
+          <disp:horizontal_display_direction>Left to Right</disp:horizontal_display_direction>
+          <disp:vertical_display_axis>Sample</disp:vertical_display_axis>
+          <disp:vertical_display_direction>Top to Bottom</disp:vertical_display_direction>
+        </disp:Display_Direction>
+      </disp:Display_Settings>
+    </Discipline_Area>
+  </Observation_Area>
+  <File_Area_Observational>
+    <File>
+      <file_name>my_image2d.img</file_name>
+      <local_identifier>image2d</local_identifier> 
+      <creation_date_time>2024-05-30T08:45:08.15Z</creation_date_time> 
+      <file_size unit="byte">7760</file_size> 
+    </File>
+    <Array_2D_Image>
+      <local_identifier>image2d</local_identifier>
+        <offset unit="byte">0</offset>
+        <axes>2</axes>
+        <axis_index_order>Last Index Fastest</axis_index_order>
+        <Element_Array>
+        <data_type>IEEE754LSBSingle</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>720</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>1440</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+  </File_Area_Observational>
+</Product_Observational>
+```
+
+## Example for a Looping Animation
+
+```
+...
+      <disp:Display_Settings>
+        <Local_Internal_Reference>
+          <local_identifier_reference>animation</local_identifier_reference>
+          <local_reference_type>display_settings_to_array</local_reference_type>
+        </Local_Internal_Reference>
+        <disp:Display_Direction>
+          <disp:horizontal_display_axis>Line</disp:horizontal_display_axis>
+          <disp:horizontal_display_direction>Left to Right</disp:horizontal_display_direction>
+          <disp:vertical_display_axis>Sample</disp:vertical_display_axis>
+          <disp:vertical_display_direction>Top to Bottom</disp:vertical_display_direction>
+        </disp:Display_Direction>
+        <disp:Movie_Display_Settings>
+          <disp:time_display_axis>Band</disp:time_display_axis>
+          <disp:frame_rate unit="frames/s">1</disp:frame_rate>
+          <disp:loop_flag">true</disp:loop_flag>
+          <disp:loop_count">10</disp:loop_count>
+          <disp:loop_delay unit="s">2.5</disp:loop_delay>
+          <disp:loop_back_and_forth_flag">false</disp:loop_back_and_forth_flag>
+        </disp:Movie_Display_Settings>
+      </disp:Display_Settings>
+...
+```

@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Example Namespace'
+project = 'Display Namespace'
 # copyright = overidden by CSS specified below
 author = 'NASA Planetary Data System'
 
@@ -68,7 +68,7 @@ html_logo = '_static/images/PDS_Planets.png'
 html_context = {
     'display_github': True,
     "github_user": "pds-data-dictionaries",
-    "github_repo": "ldd-template",
+    "github_repo": "ldd-disp",
     "github_version": "main/docs/source/"
 }
 
@@ -88,13 +88,4 @@ html_theme_options = {
     'navigation_depth': 4,
     'includehidden': True,
     'titles_only': False
-}
-
-myst_enable_extensions = [
-    "deflist",
-    "fieldlist"
-]
-
-latex_elements = {
-    'maxlistdepth': '10'
 }
