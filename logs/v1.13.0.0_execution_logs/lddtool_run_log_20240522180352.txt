@@ -1,14 +1,18 @@
 
->>  INFO LDDTOOL Version: 14.3.0
+>>  ERROR 11179 data dictionary attribute is missing for overwrite - Identifier:DataElement.DE.0001_NASA_PDS_1.pds.DD_Associate_External_Class.pds.class_name
+>>  ERROR 11179 data dictionary attribute is missing for overwrite - Identifier:DataElement.DE.0001_NASA_PDS_1.pds.DD_Associate_External_Class.pds.namespace_id
+>>  ERROR 11179 data dictionary attribute is missing for overwrite - Identifier:DataElement.DE.0001_NASA_PDS_1.pds.DD_Context_Value_List.pds.attribute_name
+>>  ERROR 11179 data dictionary attribute is missing for overwrite - Identifier:DataElement.DE.0001_NASA_PDS_1.pds.DD_Context_Value_List.pds.attribute_relative_xpath
+>>  ERROR 11179 data dictionary class is missing for overwrite - Identifier:ObjectClass.OC.0001_NASA_PDS_1.pds.Cartography_Group
+>>  ERROR 11179 data dictionary class is missing for overwrite - Identifier:ObjectClass.OC.0001_NASA_PDS_1.pds.DD_Associate_External_Class
+>>  ERROR 11179 data dictionary class is missing for overwrite - Identifier:ObjectClass.OC.0001_NASA_PDS_1.pds.DD_Context_Value_List
+>>  ERROR 11179 data dictionary class is missing for overwrite - Identifier:ObjectClass.OC.0001_NASA_PDS_1.pds.Rings
+>>  INFO LDDTOOL Version: 15.0.6
 >>  INFO IM Version Id: 1.13.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.19
->>  INFO Date: Thu Nov 02 23:29:04 UTC 2023
->>  INFO PARENT_DIR: /tmp/lddtool-14.3.0
->>  INFO SCRIPT_DIR: /tmp/lddtool-14.3.0/bin
->>  INFO LIB_DIR: /tmp/lddtool-14.3.0/lib
->>  WARNING Class omitted from build - Class Identifier:0001_NASA_PDS_1.pds.Schematron_Rule
->>  WARNING Class omitted from build - Class Identifier:0001_NASA_PDS_1.pds.Schematron_Assert
+>>  INFO Date: Wed May 22 18:03:52 UTC 2024
+>>  INFO PARENT_DIR: /tmp/lddtool-15.0.6/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:disp
 >>> INFO Init:  - Config.Properties Namespace Id Using:disp
@@ -26,8 +30,8 @@
 >>> WARNING Found duplicate attribute - lAttr.identifier:disp:Display_Settings/pds:Local_Internal_Reference
 
  -- LDDTool Execution Summary --
-     3 warning(s)
-     0 error(s)
+     1 warning(s)
+     8 error(s)
      0 fatal error(s)
 
 Input:
@@ -47,4 +51,4 @@ Output:
      - ./PDS4_DISP_1D00_1510.xml
      - ./export/JSON/PDS4_PDS_1D00.JSON
 
->>  INFO Exit(0)
+>>  INFO Exit(1)

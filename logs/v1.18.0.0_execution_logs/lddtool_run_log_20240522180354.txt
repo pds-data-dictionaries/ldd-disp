@@ -1,12 +1,10 @@
 
->>  INFO LDDTOOL Version: 14.3.0
->>  INFO IM Version Id: 1.21.0.0
+>>  INFO LDDTOOL Version: 15.0.6
+>>  INFO IM Version Id: 1.18.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.27
->>  INFO Date: Thu Nov 02 23:29:05 UTC 2023
->>  INFO PARENT_DIR: /tmp/lddtool-14.3.0
->>  INFO SCRIPT_DIR: /tmp/lddtool-14.3.0/bin
->>  INFO LIB_DIR: /tmp/lddtool-14.3.0/lib
+>>  INFO IM Label Version Id: 1.24
+>>  INFO Date: Wed May 22 18:03:54 UTC 2024
+>>  INFO PARENT_DIR: /tmp/lddtool-15.0.6/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:disp
 >>> INFO Init:  - Config.Properties Namespace Id Using:disp
@@ -29,18 +27,19 @@
 
 Input:
 
-     - IM Version: 1L00
+     - IM Version: 1I00
      - PDS4 Flag: true
      - LDD Flag: true
+     - IM Version: true
      - Export JSON Flag: true
 
      - Ingest LDD(s): /home/runner/work/ldd-disp/ldd-disp/src/PDS4_DISP_IngestLDD.xml
 
 Output:
 
-     - ./PDS4_DISP_1L00_1510.xsd
-     - ./PDS4_DISP_1L00_1510.sch
-     - ./PDS4_DISP_1L00_1510.xml
-     - ./export/JSON/PDS4_PDS_1L00.JSON
+     - ./PDS4_DISP_1I00_1510.xsd
+     - ./PDS4_DISP_1I00_1510.sch
+     - ./PDS4_DISP_1I00_1510.xml
+     - ./export/JSON/PDS4_PDS_1I00.JSON
 
 >>  INFO Exit(0)
