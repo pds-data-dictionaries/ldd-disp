@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 Schematron for Name Space Id:disp  Version:1.5.1.0 - Fri Apr 24 16:47:27 UTC 2026 -->
+  <!-- PDS4 Schematron for Name Space Id:disp  Version:1.5.1.0 - Thu Nov 19 22:30:20 UTC 2026 -->
   <!-- Generated from the PDS4 Information Model Version 1.16.0.0 - System Build 11.1 -->
   <!-- *** This PDS4 schematron file is an operational deliverable. *** -->
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
@@ -67,20 +67,6 @@
       <sch:assert test="if (disp:loop_back_and_forth_flag) then disp:loop_back_and_forth_flag = ('true', 'false') else true()">
         <title>disp:Movie_Display_Settings/disp:loop_back_and_forth_flag</title>
         The attribute disp:loop_back_and_forth_flag must be equal to one of the following values 'true', 'false'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="disp:Movie_Display_Settings/disp:frame_rate">
-      <sch:assert test="@unit = ('frames/s')">
-        <title>disp:Movie_Display_Settings/disp:frame_rate/disp:frame_rate</title>
-        The attribute @unit must be equal to one of the following values 'frames/s'.</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
-    <sch:rule context="disp:Movie_Display_Settings/disp:loop_delay">
-      <sch:assert test="@unit = ('day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr')">
-        <title>disp:Movie_Display_Settings/disp:loop_delay/disp:loop_delay</title>
-        The attribute @unit must be equal to one of the following values 'day', 'hr', 'julian day', 'microseconds', 'min', 'ms', 'ns', 's', 'yr'.</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>
